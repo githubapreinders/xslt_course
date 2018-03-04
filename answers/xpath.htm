@@ -1,0 +1,27 @@
+<pre>
+    
+
+ 1. n-5 (n-5) "."
+ 2. p-1,p-2,p-3,p-4,p-5 (p-1,p-2,p-3,p-4,p-5) "*"
+ 3. doc-elem,a,c,d,h,m (doc-elem,a,c,d,h,m) "ancestor::*"
+ 4. p-1,p-2,p-4 (p-1,p-2,p-4) "child::this"
+ 5. p-4 (p-4) "child::this[3]"
+ 6. p-3 (p-3) "*[3]"
+ 7. a,d,h,m (a,d,h,m) "ancestor::that"
+ 8. m (m) "ancestor::that[1]"
+ 9. a (a) "ancestor::that[last()]"
+10. n-4 (n-4) "preceding-sibling::*[1]"
+11. n-6 (n-6) "following-sibling::*[1]"
+12. n-4 (n-4) "preceding-sibling::that[1]"
+13. n-8 (n-8) "following-sibling::that[1]"
+14. n-7 (n-7) "../*[7]"
+15. j (j) "ancestor::that[2]/this[1]"
+16. a (a) "ancestor::that[@val='x'][2]"
+17. h (h) "ancestor::*[this/@val='z' ][1]"
+18. n-7 (n-7) "following-sibling::this[last()]"
+19. p-2,p-5 (p-2,p-5) "*[@val='y'][1] | *[@val='y'][last()]"
+20. a,m,n-1,n-3,n-5,p-1,p-3,n-7,n-9 (a,m,n-1,n-3,n-5,p-1,p-3,n-7,n-9) "(//*[@val='x'])"
+21. first comment,second comment (first comment,second comment) "//comment()"
+22. m (m) "//*[processing-instruction('cursor')]"
+
+End</pre>

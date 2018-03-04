@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<test>
+ <item val="3">Value 3</item>
+ <item val="2">Value 2 first</item>
+ <item val="5">Value 5</item>
+ <item val="8">Value 8 first</item>
+ <item val="6">Value 6</item>
+ <item val="2">Value 2 second</item>
+ <item val="5">Value 5</item>
+ <item val="8">Value 8 second</item>
+</test>

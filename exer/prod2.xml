@@ -1,0 +1,47 @@
+<?xml version="1.0"?><!--prod2.xml-->
+<!DOCTYPE sales [
+<!ELEMENT sales ( products, record )>
+<!ELEMENT products (product+)>
+<!ELEMENT product  ( #PCDATA )>
+<!ATTLIST product id ID #REQUIRED>
+<!ELEMENT record ( cust+ )>
+<!ELEMENT cust ( prodsale+ )>
+<!ATTLIST cust num CDATA #REQUIRED>
+<!ELEMENT prodsale ( #PCDATA )>
+<!ATTLIST prodsale idref IDREF #REQUIRED>
+]>
+<sales>
+  <products><product id="p1">Packing Boxes</product>
+            <product id="p2">Packing Tape</product>
+            <product id="p3">File Folders</product>
+            <product id="p4">Zip Disks</product>
+            <product id="p5">Pencils</product></products>
+  <record><cust num="C1001">
+            <prodsale idref="p1">100</prodsale>
+            <prodsale idref="p2">200</prodsale>
+            <prodsale idref="p3">30</prodsale>
+            <prodsale idref="p4">10</prodsale>
+            <prodsale idref="p5">50</prodsale></cust>
+          <cust num="C1002">
+            <prodsale idref="p2">50</prodsale>
+            <prodsale idref="p4">20</prodsale></cust>
+          <cust num="C1003">
+            <prodsale idref="p1">75</prodsale>
+            <prodsale idref="p2">15</prodsale>
+            <prodsale idref="p5">100</prodsale></cust>
+          <cust num="C1004">
+            <prodsale idref="p2">75</prodsale>
+            <prodsale idref="p3">25</prodsale>
+            <prodsale idref="p5">80</prodsale></cust>
+          <cust num="C1005">
+            <prodsale idref="p3">75</prodsale>
+            <prodsale idref="p4">15</prodsale>
+            <prodsale idref="p5">40</prodsale></cust>
+          <cust num="C1006">
+            <prodsale idref="p1">20</prodsale>
+            <prodsale idref="p2">40</prodsale>
+            <prodsale idref="p3">50</prodsale>
+            <prodsale idref="p4">5</prodsale>
+            <prodsale idref="p5">40</prodsale></cust>
+  </record>
+</sales>

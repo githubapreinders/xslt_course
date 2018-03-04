@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE imgsamp [
+<!NOTATION gif SYSTEM "">
+<!ENTITY logo SYSTEM "crane.gif" NDATA gif>
+<!ENTITY house PUBLIC "urn:x-Crane:pix:house" "house.gif" NDATA gif>
+]>
+<imgsamp>
+<para>Here is an example:</para>
+<fig file="logo">Crane Logo</fig>
+<para>And a line drawing of a house:</para>
+<fig file="house">House drawing</fig>
+<para>End of example</para>
+</imgsamp>

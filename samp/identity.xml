@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<test>
+  <a a="test">a content</a>
+  <b b="test">b content</b>
+  <c c="test">c content</c>
+</test>

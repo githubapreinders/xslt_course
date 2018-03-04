@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<test val="a">
+  <test val="b">
+     <test val="c">
+        <test val="d">
+          <test>
+            <greeting>Greeting in the middle of the file.</greeting>
+          </test>
+        </test>
+     </test>
+  </test>
+</test>

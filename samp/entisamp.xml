@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<course>
+ <module><title>Mod 1</title><lesson><title>Lesson 1-1</title></lesson></module>
+ <module><title>Mod 2</title><lesson><title>Lesson 2-1</title></lesson>
+                             <lesson><title>Lesson 2-2</title></lesson></module>
+</course>

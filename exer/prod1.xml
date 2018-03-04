@@ -1,0 +1,24 @@
+<?xml version="1.0"?><!--prod1.xml-->
+<!DOCTYPE sales [
+<!ELEMENT sales ( products, record )>
+<!ELEMENT products (product+)>
+<!ELEMENT product  ( #PCDATA )>
+<!ATTLIST product id ID #REQUIRED>
+<!ELEMENT record ( cust+ )>
+<!ELEMENT cust ( prodsale+ )>
+<!ATTLIST cust num CDATA #REQUIRED>
+<!ELEMENT prodsale ( #PCDATA )>
+<!ATTLIST prodsale idref IDREF #REQUIRED>
+]>
+<sales>
+  <products><product id="p1">Packing Boxes</product>
+            <product id="p2">Packing Tape</product></products>
+  <record><cust num="C1001">
+            <prodsale idref="p1">100</prodsale>
+            <prodsale idref="p2">200</prodsale></cust>
+          <cust num="C1002">
+            <prodsale idref="p2">50</prodsale></cust>
+          <cust num="C1003">
+            <prodsale idref="p1">75</prodsale>
+            <prodsale idref="p2">15</prodsale></cust></record>
+</sales>

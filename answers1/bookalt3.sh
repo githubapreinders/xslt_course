@@ -1,0 +1,1 @@
+sh ../prog/xslt1.sh bookalt3.xml bookalt3.xsl bookalt3.htm

@@ -1,0 +1,3 @@
+echo Transforming $1 with $2 to $3 with XSLT 1.0...
+rm -f $3
+java -jar ../prog/saxon.jar -o $3 $1 $2

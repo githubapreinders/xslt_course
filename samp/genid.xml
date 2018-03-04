@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<test>
+<section><title>First Section</title>
+<para>The content of the section is here.</para></section>
+<section><title>Second Section</title>
+<para>The content of the section is here.</para></section>
+<section><title>Third Section</title>
+<para>The content of the section is here.</para></section>
+</test>

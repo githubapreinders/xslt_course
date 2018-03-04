@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<test>
+  <html file="multout1.htm" method="html">
+    <head><title>Test Output</title></head>
+    <body><p>This is an HTML test<br/>with a break</p></body>
+  </html>
+  <html file="multout2.xml" method="xml">
+    <head><title>Test Output</title></head>
+    <body><p>This is an XML test<br/>with a break</p></body>
+  </html>
+  <stuff file="multout3.txt" method="text"
+    >This is a test with &lt; and &amp; characters.</stuff>
+</test>

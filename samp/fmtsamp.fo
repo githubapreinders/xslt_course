@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><root xmlns="http://www.w3.org/1999/XSL/Format"><layout-master-set><simple-page-master master-name="crane" margin-top=".5in" margin-bottom=".5in" margin-left=".75in" margin-right=".75in" page-width="8.5in" page-height="11in"><region-body region-name="crane-content"/></simple-page-master></layout-master-set><page-sequence master-reference="crane"><flow flow-name="crane-content" font-size="20pt">
+<block space-before.optimum="20pt">First paragraph.</block>
+<block space-before.optimum="20pt">Second para <inline font-weight="bold">with emphasis</inline> embedded.</block>
+<block space-before.optimum="20pt">Last paragraph.</block>
+</flow></page-sequence></root>

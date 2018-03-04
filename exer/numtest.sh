@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh numtest.xml numtest.xsl numtest.htm

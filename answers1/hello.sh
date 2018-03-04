@@ -1,0 +1,1 @@
+sh ../prog/xslt1.sh hello.xml hello.xsl hello.htm

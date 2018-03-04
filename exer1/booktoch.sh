@@ -1,0 +1,1 @@
+sh ../prog/xslt1.sh booktoch.xml booktoch.xsl booktoch.htm

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="hockey4.xsl"?>
+<standings date="2003-04-04">       <!--both conferences-->
+ <conference>                       <!--each conference-->
+  <name>Eastern</name>
+  <division>                        <!--each division in conf.-->
+   <name>Northeast</name>
+   <team>                           <!--each team in division-->
+    <name>Ottawa</name>
+    <g>81</g>                       <!--games played-->
+    <w>51</w>                       <!--games won-->
+    <l>21</l>                       <!--games lost-->
+    <t>8</t>                        <!--games tied-->
+    <o>1</o>                        <!--games lost in overtime-->
+    <p>111</p>                      <!--point total-->
+   </team>
+<team><name>Toronto</name><g>81</g><w>44</w><l>27</l><t>7</t><o>3</o><p>98</p>
+</team><team><name>Boston</name><g>81</g><w>35</w><l>31</l><t>11</t><o>4</o><p>85</p>
+</team><team><name>Montreal</name><g>81</g><w>29</w><l>35</l><t>8</t><o>9</o><p>75</p>
+</team><team><name>Buffalo</name><g>80</g><w>27</w><l>36</l><t>9</t><o>8</o><p>71</p>
+</team></division>
+<division><name>Atlantic</name>
+<team><name>New Jersey</name><g>80</g><w>45</w><l>20</l><t>9</t><o>6</o><p>105</p>
+</team><team><name>Philadelphia</name><g>80</g><w>43</w><l>20</l><t>13</t><o>4</o><p>103</p>
+</team><team><name>NY Islanders</name><g>79</g><w>34</w><l>32</l><t>11</t><o>2</o><p>81</p>
+</team><team><name>NY Rangers</name><g>80</g><w>32</w><l>34</l><t>10</t><o>4</o><p>78</p>
+</team><team><name>Pittsburgh</name><g>81</g><w>27</w><l>43</l><t>6</t><o>5</o><p>65</p>
+</team></division>
+<division><name>Southeast</name>
+<team><name>Tampa Bay</name><g>80</g><w>36</w><l>23</l><t>16</t><o>5</o><p>93</p>
+</team><team><name>Washington</name><g>81</g><w>38</w><l>29</l><t>8</t><o>6</o><p>90</p>
+</team><team><name>Atlanta</name><g>80</g><w>29</w><l>39</l><t>7</t><o>5</o><p>70</p>
+</team><team><name>Florida</name><g>80</g><w>23</w><l>35</l><t>13</t><o>9</o><p>68</p>
+</team><team><name>Carolina</name><g>80</g><w>22</w><l>41</l><t>11</t><o>6</o><p>61</p>
+</team></division>
+</conference>
+<conference><name>Western</name>
+<division><name>Central</name>
+<team><name>Detroit</name><g>79</g><w>47</w><l>20</l><t>9</t><o>3</o><p>106</p>
+</team><team><name>St. Louis</name><g>79</g><w>41</w><l>22</l><t>10</t><o>6</o><p>98</p>
+</team><team><name>Chicago</name><g>79</g><w>28</w><l>33</l><t>12</t><o>6</o><p>74</p>
+</team><team><name>Nashville</name><g>80</g><w>27</w><l>33</l><t>13</t><o>7</o><p>74</p>
+</team><team><name>Columbus</name><g>80</g><w>29</w><l>41</l><t>7</t><o>3</o><p>68</p>
+</team></division>
+<division><name>Northwest</name>
+<team><name>Vancouver</name><g>81</g><w>45</w><l>22</l><t>13</t><o>1</o><p>104</p>
+</team><team><name>Colorado</name><g>80</g><w>40</w><l>19</l><t>13</t><o>8</o><p>101</p>
+</team><team><name>Minnesota</name><g>81</g><w>41</w><l>29</l><t>10</t><o>1</o><p>93</p>
+</team><team><name>Edmonton</name><g>80</g><w>36</w><l>25</l><t>10</t><o>9</o><p>91</p>
+</team><team><name>Calgary</name><g>80</g><w>27</w><l>36</l><t>13</t><o>4</o><p>71</p>
+</team></division>
+<division><name>Pacific</name>
+<team><name>Dallas</name><g>81</g><w>45</w><l>17</l><t>15</t><o>4</o><p>109</p>
+</team><team><name>Anaheim</name><g>81</g><w>40</w><l>27</l><t>9</t><o>5</o><p>94</p>
+</team><team><name>Los Angeles</name><g>80</g><w>32</w><l>37</l><t>6</t><o>5</o><p>75</p>
+</team><team><name>Phoenix</name><g>80</g><w>30</w><l>35</l><t>10</t><o>5</o><p>75</p>
+</team><team><name>San Jose</name><g>80</g><w>28</w><l>37</l><t>7</t><o>8</o><p>71</p>
+</team></division>
+</conference>
+</standings>

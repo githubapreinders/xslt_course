@@ -1,0 +1,26 @@
+<result>
+Non-inverted Structure (translated):
+{test val="a"}
+{test val="b"}
+{test val="c"}
+{test val="d"}
+{test}<hello>Greeting in the middle of the file.</hello>{/test}
+{/test val="d"}
+{/test val="c"}
+{/test val="b"}
+{/test val="a"}
+
+Inverted Structure:
+{/test}
+{/test val="d"}
+{/test val="c"}
+{/test val="b"}
+{/test val="a"}
+<hello>Greeting in the middle of the file.</hello>
+<greeting>Greeting in the middle of the file.</greeting>
+{test val="a"}
+{test val="b"}
+{test val="c"}
+{test val="d"}
+{test}
+</result>

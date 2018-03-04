@@ -1,0 +1,2 @@
+This is a test with a backslash \\ and eacute é in it - 
+plus the latin-1 for eacute \233-é\ as well

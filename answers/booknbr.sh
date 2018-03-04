@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh booknbr.xml booknbr.xsl booknbr.htm

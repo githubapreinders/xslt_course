@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="showtree-html.xsl"?>
+<!DOCTYPE greeting [
+<!ATTLIST greeting attr2 NMTOKENS #IMPLIED>
+<!ATTLIST greeting attr3 CDATA #REQUIRED>
+<!ATTLIST greeting attr4 NMTOKENS "   a   b   c   ">
+<!ATTLIST greeting attr5 CDATA    "   a   b   c   ">
+]>
+<greeting attr1="   a   b   c   ]]>"
+          attr2="   a   b   c   "
+          attr3="   a   b   c   ">
+<value>Hello <![CDATA[<world>]]>!</value>
+<value>Hello &lt;world></value>
+<value>Hello &#60;world></value>
+<value>Hello &#x3c;world></value>
+<value>Hello &#x3C;world></value>
+<value>Hello world]></value>
+<value>Hello world]]&gt;</value>
+<value>Hello world]]&#x3e;</value>
+</greeting>

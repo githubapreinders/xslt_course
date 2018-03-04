@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE test [
+<!ATTLIST linkend id ID #REQUIRED>
+]>
+<test>
+<doc file="multhtm1.htm">
+<head><title>Test Output 1</title></head>
+<body><linkend id="doc1"/>
+<p>This is a link to <link idref="doc2"/> 
+from document 1.</p>
+</body>
+</doc>
+<doc file="multhtm2.htm">
+<head><title>Test Output 2</title></head>
+<body><linkend id="doc2"/>
+<p>This is a link to <link idref="doc1"/> 
+from document 2.</p>
+</body>
+</doc>
+</test>

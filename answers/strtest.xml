@@ -1,0 +1,7 @@
+<strs>
+  <str>This is a test</str>
+  <str>This is a SecondTest   with   extra   spaces</str>
+  <str>This thirdTest has a couple of camelCase words in it.</str>
+  <str>Looking for 123456 space-separated sequences, not words</str>
+  <str>ThisSentenceIsEntirelyCamelCase</str>
+</strs>

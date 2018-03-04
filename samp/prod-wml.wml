@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE wml SYSTEM "http://CRANE/wml13.dtd">
+<wml><card title="Record of Sales"><p><em>Record of Sales</em></p><p><select name="cards"><option onpick="#C1001">Customer C1001</option><option onpick="#C1002">Customer C1002</option><option onpick="#C1003">Customer C1003</option></select></p></card><card id="C1001" title="Customer C1001"><p><em>C1001</em></p><p>Items: 2</p><p>Total: 300</p>
+            <p>Packing Boxes - 100</p>
+            <p>Packing Tape - 200</p></card><card id="C1002" title="Customer C1002"><p><em>C1002</em></p><p>Items: 1</p><p>Total: 50</p>
+            <p>Packing Tape - 50</p></card><card id="C1003" title="Customer C1003"><p><em>C1003</em></p><p>Items: 2</p><p>Total: 90</p>
+            <p>Packing Boxes - 75</p>
+            <p>Packing Tape - 15</p></card></wml>

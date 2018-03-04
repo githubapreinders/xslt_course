@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="asamp.xsl"?>
+<!DOCTYPE asamp [
+<!ELEMENT asamp   ( section+ )>
+<!ELEMENT section ( title, para+ )>
+<!ATTLIST section id ID #REQUIRED>
+<!ELEMENT title   ( #PCDATA )>
+<!ELEMENT para    ( #PCDATA | sectref )*>
+<!ELEMENT sectref EMPTY>
+<!ATTLIST sectref idref IDREF #REQUIRED>
+]>
+<asamp>
+<section id="s1">
+<title>Section One</title>
+<para>First paragraph of section one.</para>
+<para>Second paragraph of section one.</para>
+</section>
+<section id="s2">
+<title>Section Two</title>
+<para>First paragraph of section two.</para>
+<para>Second paragraph of section two
+with reference to <sectref idref="s1"/> embedded.</para>
+</section>
+</asamp>

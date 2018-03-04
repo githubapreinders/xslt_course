@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh bookfunc.xml bookfunc.xsl bookfunc.htm

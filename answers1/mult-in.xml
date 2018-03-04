@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="mult-in.xsl"?>
+<!DOCTYPE control [<!NOTATION xml SYSTEM "">
+<!ENTITY resourceA SYSTEM "mult-d1.xml" NDATA xml>
+<!ENTITY resourceB SYSTEM "mult-d2.xml" NDATA xml>
+<!ENTITY resourceC SYSTEM "mult-d3.xml" NDATA xml>]>
+<control>
+  <get-data ref="resourceB"/>
+  <get-data ref="resourceA"/>
+  <get-data ref="resourceC"/>
+  <get-data ref="resourceA"/>
+</control>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="metasamp.xsl"?>
+<metasamp>
+<banner>The Sample Title</banner>
+<para>Here is a paragraph</para>
+<para>End of example</para>
+</metasamp>

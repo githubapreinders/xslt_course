@@ -1,0 +1,4 @@
+<!DOCTYPE doc [
+<!ENTITY foo SYSTEM "../companies/info.xml">
+]>
+<doc file="data.xml">&foo;</doc>

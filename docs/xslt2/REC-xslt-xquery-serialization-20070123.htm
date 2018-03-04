@@ -1,0 +1,3131 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0065)http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/ -->
+<?xml version="1.0" encoding="utf-8"?><HTML lang=en xml:lang="en" 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>XSLT 2.0 and XQuery 1.0 Serialization</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR>
+<STYLE type=text/css>CODE {
+	FONT-FAMILY: monospace
+}
+DIV.constraint {
+	MARGIN-LEFT: 2em
+}
+DIV.issue {
+	MARGIN-LEFT: 2em
+}
+DIV.note {
+	MARGIN-LEFT: 2em
+}
+DIV.notice {
+	MARGIN-LEFT: 2em
+}
+DIV.issue P.title {
+	MARGIN-LEFT: -2em
+}
+OL.enumar {
+	LIST-STYLE-TYPE: decimal
+}
+OL.enumla {
+	LIST-STYLE-TYPE: lower-alpha
+}
+OL.enumlr {
+	LIST-STYLE-TYPE: lower-roman
+}
+OL.enumua {
+	LIST-STYLE-TYPE: upper-alpha
+}
+OL.enumur {
+	LIST-STYLE-TYPE: upper-roman
+}
+LI P {
+	MARGIN-TOP: 0.3em; MARGIN-BOTTOM: 0.3em
+}
+SUP SMALL {
+	COLOR: #8f8f8f; FONT-STYLE: italic
+}
+DIV.exampleInner PRE {
+	MARGIN-TOP: 0em; MARGIN-BOTTOM: 0em; MARGIN-LEFT: 1em
+}
+DIV.exampleOuter {
+	BORDER-RIGHT: gray 4px double; PADDING-RIGHT: 0em; BORDER-TOP: gray 4px double; PADDING-LEFT: 0em; PADDING-BOTTOM: 0em; MARGIN: 0em; BORDER-LEFT: gray 4px double; PADDING-TOP: 0em; BORDER-BOTTOM: gray 4px double
+}
+DIV.exampleInner {
+	PADDING-RIGHT: 4px; BORDER-TOP: #d3d3d3 4px double; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; MARGIN: 0em; PADDING-TOP: 4px; BORDER-BOTTOM: #d3d3d3 4px double; BACKGROUND-COLOR: #d5dee3
+}
+DIV.exampleWrapper {
+	MARGIN: 4px
+}
+DIV.exampleHeader {
+	FONT-WEIGHT: bold; MARGIN: 4px
+}
+DIV.issue {
+	MARGIN-BOTTOM: 20pt; BORDER-BOTTOM: black 1pt solid
+}
+TH.issue-toc-head {
+	BORDER-BOTTOM: black 1pt solid
+}
+</STYLE>
+<LINK href="REC-xslt-xquery-serialization-20070123_files/W3C-REC.css" 
+type=text/css rel=stylesheet></HEAD>
+<BODY>
+<DIV class=head>
+<P><A href="http://www.w3.org/"><IMG height=48 alt=W3C 
+src="REC-xslt-xquery-serialization-20070123_files/w3c_home.png" 
+width=72></A></P>
+<H1><A id=title name=title></A>XSLT 2.0 and XQuery 1.0 Serialization</H1>
+<H2><A id=w3c-doctype name=w3c-doctype></A>W3C Recommendation 23 January 
+2007</H2>
+<DL>
+  <DT>This version: 
+  <DD><A 
+  href="http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/">http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/</A> 
+
+  <DT>Latest version: 
+  <DD><A 
+  href="http://www.w3.org/TR/xslt-xquery-serialization/">http://www.w3.org/TR/xslt-xquery-serialization/</A> 
+
+  <DT>Previous version: 
+  <DD><A 
+  href="http://www.w3.org/TR/2006/PR-xslt-xquery-serialization-20061121/">http://www.w3.org/TR/2006/PR-xslt-xquery-serialization-20061121/</A> 
+
+  <DT>Editors: 
+  <DD>Scott Boag, IBM <A 
+  href="mailto:scott_boag@us.ibm.com">mailto:scott_boag@us.ibm.com</A> 
+  <DD>Michael Kay, Saxonica <A 
+  href="http://www.saxonica.com/">&lt;http://www.saxonica.com&gt;</A> 
+  <DD>Joanne Tong, IBM <A 
+  href="mailto:joannet@ca.ibm.com">mailto:joannet@ca.ibm.com</A> 
+  <DD>Norman Walsh, Sun Microsystems <A 
+  href="mailto:Norman.Walsh@Sun.COM">mailto:Norman.Walsh@Sun.COM</A> 
+  <DD>Henry Zongaro, IBM <A 
+  href="mailto:zongaro@ca.ibm.com">mailto:zongaro@ca.ibm.com</A> </DD></DL>
+<P>Please refer to the <A 
+href="http://www.w3.org/XML/2007/qt-errata/xslt-xquery-serialization-errata.html"><STRONG>errata</STRONG></A> 
+for this document, which may include some normative corrections.</P>
+<P>See also <A 
+href="http://www.w3.org/2003/03/Translations/byTechnology?technology=xslt-xquery-serialization"><STRONG>translations</STRONG></A>.</P>
+<P>This document is also available in these non-normative formats: <A 
+href="http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/serialization.xml">XML</A>.</P>
+<P class=copyright><A 
+href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</A>&nbsp;©&nbsp;2007&nbsp;<A 
+href="http://www.w3.org/"> <ACRONYM 
+title="World Wide Web Consortium">W3C</ACRONYM></A><SUP>®</SUP> (<A 
+href="http://www.csail.mit.edu/"><ACRONYM 
+title="Massachusetts Institute of Technology">MIT</ACRONYM></A>, <A 
+href="http://www.ercim.org/"><ACRONYM 
+title="European Research Consortium for Informatics and Mathematics">ERCIM</ACRONYM></A>, 
+<A href="http://www.keio.ac.jp/">Keio</A>), All Rights Reserved. W3C <A 
+href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</A>, 
+<A 
+href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</A> 
+and <A href="http://www.w3.org/Consortium/Legal/copyright-documents">document 
+use</A> rules apply.</P></DIV>
+<HR>
+
+<DIV>
+<H2><A id=abstract name=abstract></A>Abstract</H2>
+<P>This document defines serialization of an instance of the data model as 
+defined in <A 
+href="http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/#xpath-datamodel">[XQuery 
+1.0 and XPath 2.0 Data Model]</A> into a sequence of octets. Serialization is 
+designed to be a component that can be used by other specifications such as <A 
+href="http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/#xslt20">[XSL 
+Transformations (XSLT) Version 2.0]</A> or <A 
+href="http://www.w3.org/TR/2007/REC-xslt-xquery-serialization-20070123/#xquery">[XQuery 
+1.0: An XML Query Language]</A>.</P></DIV>
+<DIV>
+<H2><A id=status name=status></A>Status of this Document</H2>
+<P><EM>This section describes the status of this document at the time of its 
+publication. Other documents may supersede this document. A list of current W3C 
+publications and the latest revision of this technical report can be found in 
+the <A href="http://www.w3.org/TR/">W3C technical reports index</A> at 
+http://www.w3.org/TR/.</EM></P>
+<P>This is one document in a set of eight documents that have progressed to 
+Recommendation together (XQuery 1.0, XQueryX 1.0, XSLT 2.0, Data Model, 
+Functions and Operators, Formal Semantics, Serialization, XPath 2.0).</P>
+<P>This is a <A 
+href="http://www.w3.org/2004/02/Process-20040205/tr.html#RecsW3C">Recommendation</A> 
+of the W3C. It has been jointly developed by the W3C <A 
+href="http://www.w3.org/Style/XSL">XSL Working Group</A> and the W3C <A 
+href="http://www.w3.org/XML/Query">XML Query Working Group</A>, each of which is 
+part of the <A href="http://www.w3.org/XML/Activity">XML Activity</A>.</P>
+<P>This document has been reviewed by W3C Members, by software developers, and 
+by other W3C groups and interested parties, and is endorsed by the Director as a 
+W3C Recommendation. It is a stable document and may be used as reference 
+material or cited from another document. W3C's role in making the Recommendation 
+is to draw attention to the specification and to promote its widespread 
+deployment. This enhances the functionality and interoperability of the Web.</P>
+<P>No substantive changes have been made to this specification since its 
+publication as a Proposed Recommendation.</P>
+<P>Please report errors in this document using W3C's <A 
+href="http://www.w3.org/Bugs/Public/">public Bugzilla system</A> (instructions 
+can be found at <A 
+href="http://www.w3.org/XML/2005/04/qt-bugzilla">http://www.w3.org/XML/2005/04/qt-bugzilla</A>). 
+If access to that system is not feasible, you may send your comments to the W3C 
+XSLT/XPath/XQuery public comments mailing list, <A 
+href="mailto:public-qt-comments@w3.org">public-qt-comments@w3.org</A>. It will 
+be very helpful if you include the string “[Ser]” in the subject line of your 
+report, whether made in Bugzilla or in email. Each Bugzilla entry and email 
+message should contain only one error report. Archives of the comments and 
+responses are available at <A 
+href="http://lists.w3.org/Archives/Public/public-qt-comments/">http://lists.w3.org/Archives/Public/public-qt-comments/</A>.</P>
+<P>This document was produced by groups operating under the <A 
+href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C 
+Patent Policy</A>. W3C maintains a <A 
+href="http://www.w3.org/2004/01/pp-impl/18797/status#disclosures">public list of 
+any patent disclosures</A> made in connection with the deliverables of the XML 
+Query Working Group and also maintains a <A 
+href="http://www.w3.org/2004/01/pp-impl/19552/status#disclosures">public list of 
+any patent disclosures</A> made in connection with the deliverables of the XSL 
+Working Group; those pages also include instructions for disclosing a patent. An 
+individual who has actual knowledge of a patent which the individual believes 
+contains <A 
+href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential 
+Claim(s)</A> must disclose the information in accordance with <A 
+href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 
+6 of the W3C Patent Policy</A>.</P></DIV>
+<DIV class=toc>
+<H2><A id=contents name=contents></A>Table of Contents</H2>
+<P class=toc>1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#intro">Introduction</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;1.1 
+<A 
+href="REC-xslt-xquery-serialization-20070123.htm#terminology">Terminology</A><BR>2 
+<A 
+href="REC-xslt-xquery-serialization-20070123.htm#serdm">Sequence 
+Normalization</A><BR>3 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam">Serialization 
+Parameters</A><BR>4 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serphases">Phases 
+of Serialization</A><BR>5 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-output">XML 
+Output Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;5.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_PARAMS">The 
+Influence of Serialization Parameters upon the XML Output 
+Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_VERSION">XML 
+Output Method: the version 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.2 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_ENCODING">XML 
+Output Method: the encoding 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.3 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-indent">XML 
+Output Method: the indent 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.4 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_CDATA-SECTION-ELEMENTS">XML 
+Output Method: the cdata-section-elements 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.5 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_OMIT-XML-DECLARATION">XML 
+Output Method: the omit-xml-declaration and standalone 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.6 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_DOCTYPE">XML 
+Output Method: the doctype-system and doctype-public 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.7 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-undeclare-NS">XML 
+Output Method: the undeclare-prefixes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.8 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_NORMALIZATION-FORM">XML 
+Output Method: the normalization-form 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.9 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_MEDIA-TYPE">XML 
+Output Method: the media-type 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.10 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_USE-CHARACTER-MAPS">XML 
+Output Method: the use-character-maps 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.11 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_BYTE-ORDER-MARK">XML 
+Output Method: the byte-order-mark 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.12 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_ESCAPE-URI-ATTRIBUTES">XML 
+Output Method: the escape-uri-attributes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1.13 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_INCLUDE-CONTENT-TYPE">XML 
+Output Method: the include-content-type Parameter</A><BR>6 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml-output">XHTML 
+Output Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;6.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_PARAMS">The 
+Influence of Serialization Parameters upon the XHTML Output 
+Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_VERSION">XHTML 
+Output Method: the version 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.2 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_ENCODING">XHTML 
+Output Method: the encoding 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.3 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_INDENT">XHTML 
+Output Method: the indent 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.4 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_CDATA-SECTION-ELEMENTS">XHTML 
+Output Method: the cdata-section-elements 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.5 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_OMIT-XML-DECLARATION">XHTML 
+Output Method: the omit-xml-declaration and standalone 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.6 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_DOCTYPE">XHTML 
+Output Method: the doctype-system and doctype-public 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.7 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_UNDECLARE-PREFIXES">XHTML 
+Output Method: the undeclare-prefixes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.8 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_NORMALIZATION-FORM">XHTML 
+Output Method: the normalization-form 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.9 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_MEDIA-TYPE">XHTML 
+Output Method: the media-type 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.10 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_USE-CHARACTER-MAPS">XHTML 
+Output Method: the use-character-maps 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.11 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_BYTE-ORDER-MARK">XHTML 
+Output Method: the byte-order-mark 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.12 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_ESCAPE-URI-ATTRIBUTES">XHTML 
+Output Method: the escape-uri-attributes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1.13 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_INCLUDE-CONTENT-TYPE">XHTML 
+Output Method: the include-content-type Parameter</A><BR>7 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html-output">HTML 
+Output Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;7.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_MARKUP">Markup 
+for Elements</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;7.2 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_ATTRIBS">Writing 
+Attributes</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;7.3 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_CHARDATA">Writing 
+Character Data</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;7.4 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_PARAMS">The 
+Influence of Serialization Parameters upon the HTML Output 
+Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_VERSION">HTML 
+Output Method: the version 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.2 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_ENCODING">HTML 
+Output Method: the encoding 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.3 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_INDENT">HTML 
+Output Method: the indent 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.4 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_CDATA-SECTION-ELEMENTS">HTML 
+Output Method: the cdata-section-elements 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.5 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_OMIT-XML-DECLARATION">HTML 
+Output Method: the omit-xml-declaration and standalone 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.6 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_DOCTYPE">HTML 
+Output Method: the doctype-system and doctype-public 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.7 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_UNDECLARE-PREFIXES">HTML 
+Output Method: the undeclare-prefixes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.8 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_NORMALIZATION-FORM">HTML 
+Output Method: the normalization-form 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.9 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_MEDIA-TYPE">HTML 
+Output Method: the media-type 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.10 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_USE-CHARACTER-MAPS">HTML 
+Output Method: the use-character-maps 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.11 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_BYTE-ORDER-MARK">HTML 
+Output Method: the byte-order-mark 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.12 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_ESCAPE-URI-ATTRIBUTES">HTML 
+Output Method: the escape-uri-attributes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.4.13 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_INCLUDE-CONTENT-TYPE">HTML 
+Output Method: the include-content-type Parameter</A><BR>8 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#text-output">Text 
+Output Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;8.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_PARAMS">The 
+Influence of Serialization Parameters upon the Text Output 
+Method</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.1 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_VERSION">Text 
+Output Method: the version 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.2 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_ENCODING">Text 
+Output Method: the encoding 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.3 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_INDENT">Text 
+Output Method: the indent 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.4 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_CDATA-SECTION-ELEMENTS">Text 
+Output Method: the cdata-section-elements 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.5 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_OMIT-XML-DECLARATION">Text 
+Output Method: the omit-xml-declaration and standalone 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.6 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_DOCTYPE">Text 
+Output Method: the doctype-system and doctype-public 
+Parameters</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.7 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_UNDECLARE-PREFIXES">Text 
+Output Method: the undeclare-prefixes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.8 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_NORMALIZATION-FORM">Text 
+Output Method: the normalization-form 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.9 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_MEDIA-TYPE">Text 
+Output Method: the media-type 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.10 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_USE-CHARACTER-MAPS">Text 
+Output Method: the use-character-maps 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.11 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_BYTE-ORDER-MARK">Text 
+Output Method: the byte-order-mark 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.12 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_ESCAPE-URI-ATTRIBUTES">Text 
+Output Method: the escape-uri-attributes 
+Parameter</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.1.13 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#TEXT_INCLUDE-CONTENT-TYPE">Text 
+Output Method: the include-content-type Parameter</A><BR>9 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#character-maps">Character 
+Maps</A><BR>10 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#conformance">Conformance</A><BR></P>
+<H3><A id=appendices name=appendices></A>Appendices</H3>
+<P class=toc>A <A 
+href="REC-xslt-xquery-serialization-20070123.htm#references">References</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;A.1 
+<A 
+href="REC-xslt-xquery-serialization-20070123.htm#normative-references">Normative 
+References</A><BR>&nbsp;&nbsp;&nbsp;&nbsp;A.2 <A 
+href="REC-xslt-xquery-serialization-20070123.htm#informative-references">Informative 
+References</A><BR>B <A 
+href="REC-xslt-xquery-serialization-20070123.htm#id-errors">Summary 
+of Error Conditions</A><BR>C <A 
+href="REC-xslt-xquery-serialization-20070123.htm#list-of-uri-attributes">List 
+of URI Attributes</A><BR>D <A 
+href="REC-xslt-xquery-serialization-20070123.htm#implementation-defined-features">Checklist 
+of Implementation-Defined Features</A> (Non-Normative)<BR>E <A 
+href="REC-xslt-xquery-serialization-20070123.htm#revision-log">Revision 
+Log</A> (Non-Normative)<BR></P></DIV>
+<HR>
+
+<DIV class=body>
+<DIV class=div1>
+<H2><A id=intro name=intro></A>1 Introduction</H2>
+<P>This document defines serialization of the W3C XQuery 1.0 and XPath 2.0 Data 
+Model (XDM), which is the data model of at least <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath20">[XML 
+Path Language (XPath) 2.0]</A>, <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xslt20">[XSL 
+Transformations (XSLT) Version 2.0]</A>, and <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xquery">[XQuery 
+1.0: An XML Query Language]</A>, and any other specifications that reference 
+it.</P>
+<P>Serialization is the process of converting an instance of the <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath-datamodel">[XQuery 
+1.0 and XPath 2.0 Data Model]</A> into a sequence of octets. Serialization is 
+well-defined for most data model instances.</P>
+<DIV class=div2>
+<H3><A id=terminology name=terminology></A>1.1 Terminology</H3>
+<P>In this specification, where they appear in upper case, the words "MUST", 
+"MUST NOT", "SHOULD", "SHOULD NOT", "MAY", "REQUIRED", and "RECOMMENDED" are to 
+be interpreted as described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#RFC2119">[RFC2119]</A>.</P>
+<P>[<A id=serializer title=serializer name=serializer>Definition</A>: As is 
+indicated in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#conformance"><B>10 
+Conformance</B></A>, conformance criteria for serialization are determined by 
+other specifications that refer to this specification. A <B>serializer</B> is 
+software that implements some or all of the requirements of this specification 
+in accordance with such conformance criteria.] A serializer is not 
+<STRONG>REQUIRED</STRONG> to directly provide a programming interface that 
+permits a user to set serialization parameters or to provide an input sequence 
+for serialization.</P>
+<P>Certain aspects of serialization are described in this specification as <A 
+title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+or <A title=implementation-dependent 
+href="REC-xslt-xquery-serialization-20070123.htm#impdep">implementation-dependent</A>.</P>
+<P>[<A id=impdef title=implementation-defined name=impdef>Definition</A>: 
+<B>Implementation-defined</B> indicates an aspect that <STRONG>MAY</STRONG> 
+differ between <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializers</A>, 
+but whose actual behavior <STRONG>MUST</STRONG> be specified either by another 
+specification that sets conformance criteria for serialization (see <A 
+href="REC-xslt-xquery-serialization-20070123.htm#conformance"><B>10 
+Conformance</B></A>) or in documentation that accompanies the <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>.]</P>
+<P>[<A id=impdep title=implementation-dependent name=impdep>Definition</A>: 
+<B>Implementation-dependent</B> indicates an aspect that <STRONG>MAY</STRONG> 
+differ between <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializers</A>, 
+and whose actual behavior is not <STRONG>REQUIRED</STRONG> to be specified 
+either by another specification that sets conformance criteria for serialization 
+(see <A 
+href="REC-xslt-xquery-serialization-20070123.htm#conformance"><B>10 
+Conformance</B></A>) or in documentation that accompanies the <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>.]</P>
+<P>[<A id=serial-err title="serialization error" name=serial-err>Definition</A>: 
+In some instances, the sequence that is input to serialization cannot be 
+successfully converted into a sequence of octets given the set of serialization 
+parameter (<A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A>) values specified. A <B>serialization error</B> 
+is said to occur in such an instance.] In some cases, a <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is <STRONG>REQUIRED</STRONG> to signal such an error. What it means to signal a 
+serialization error is determined by the relevant conformance criteria (<A 
+href="REC-xslt-xquery-serialization-20070123.htm#conformance"><B>10 
+Conformance</B></A>) to which the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+conforms. In other cases, there is an <A title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+choice between signaling a serialization error and performing a recovery action. 
+Such a recovery action will allow a <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+to produce a sequence of octets that might not fully reflect the usual 
+requirements of the parameter settings that are in effect.</P>
+<P>Many terms used in this document are defined in the XPath specification <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath20">[XML 
+Path Language (XPath) 2.0]</A> or the Data Model specification <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath-datamodel">[XQuery 
+1.0 and XPath 2.0 Data Model]</A>. Particular attention is drawn to the 
+following:</P>
+<UL>
+  <LI>
+  <P>[<A id=dt-atomization title=atomize name=dt-atomization>Definition</A>: The 
+  term <B>atomization</B> is defined in <A 
+  href="http://www.w3.org/TR/xpath20/#id-atomization">Section 2.4.2 
+  Atomization</A><SUP><SMALL>XP</SMALL></SUP>. It is a process that takes as 
+  input a sequence of <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  and <A href="http://www.w3.org/TR/xpath20/#dt-atomic-value">atomic 
+  values</A><SUP><SMALL>XP</SMALL></SUP>, and returns a sequence of <A 
+  href="http://www.w3.org/TR/xpath20/#dt-atomic-value">atomic 
+  values</A><SUP><SMALL>XP</SMALL></SUP>, in which the <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  are replaced by their <A 
+  href="http://www.w3.org/TR/xpath20/#dt-typed-value">typed 
+  values</A><SUP><SMALL>XP</SMALL></SUP> as defined in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#xpath-datamodel">[XQuery 
+  1.0 and XPath 2.0 Data Model]</A>.]</P>
+  <LI>
+  <P>[<A id=dt-node title=node name=dt-node>Definition</A>: The term <B>Node</B> 
+  is defined as part of <A 
+  href="http://www.w3.org/TR/xpath-datamodel/#Node">Section 6 
+  Nodes</A><SUP><SMALL>DM</SMALL></SUP>. There are seven kinds of <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the data model: document, element, attribute, text, namespace, processing 
+  instruction, and comment.]</P>
+  <LI>
+  <P>[<A id=dt-sequence title=sequence name=dt-sequence>Definition</A>: The term 
+  <B>sequence</B> is defined in <A 
+  href="http://www.w3.org/TR/xpath20/#id-basics">Section 2 
+  Basics</A><SUP><SMALL>XP</SMALL></SUP>. A <A title=sequence 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-sequence">sequence</A> 
+  is an ordered collection of zero or more items.]</P>
+  <LI>
+  <P>[<A id=dt-string-value title="string value" 
+  name=dt-string-value>Definition</A>: The term <B>string value</B> is defined 
+  in <A href="http://www.w3.org/TR/xpath-datamodel/#dm-string-value">Section 
+  5.13 string-value Accessor</A><SUP><SMALL>DM</SMALL></SUP>. Every <A 
+  title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  has a <A title="string value" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-string-value">string 
+  value</A>. For example, the <A title="string value" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-string-value">string 
+  value</A> of an element is the concatenation of the <A title="string value" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-string-value">string 
+  values</A> of all its descendant text <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>.]</P>
+  <LI>
+  <P>[<A id=dt-expanded-qname title="expanded QName" 
+  name=dt-expanded-qname>Definition</A>: The term <B>expanded QName</B> is 
+  defined in <A href="http://www.w3.org/TR/xpath20/#id-basics">Section 2 
+  Basics</A><SUP><SMALL>XP</SMALL></SUP>. An <A title="expanded QName" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-expanded-qname">expanded 
+  QName</A> consists of an optional namespace URI and a local name. An <A 
+  title="expanded QName" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-expanded-qname">expanded 
+  QName</A> also retains its original namespace prefix (if any), to facilitate 
+  casting the expanded QName into a string.]</P>
+  <LI>
+  <P>[<A id=null-namespace-URI title="null namespace URI" 
+  name=null-namespace-URI>Definition</A>: An element or attribute that is in no 
+  namespace, or an <A title="expanded QName" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-expanded-qname">expanded-QName</A> 
+  whose namespace part is an empty sequence, is referred to as having a <B>null 
+  namespace URI</B>].</P>
+  <LI>
+  <P>[<A id=non-null-namespace-URI title="non-null namespace URI" 
+  name=non-null-namespace-URI>Definition</A>: An element or attribute that does 
+  not have a <A title="null namespace URI" 
+  href="REC-xslt-xquery-serialization-20070123.htm#null-namespace-URI">null 
+  namespace URI</A>, is referred to as having a <B>non-null namespace 
+  URI</B>].</P></LI></UL></DIV></DIV>
+<DIV class=div1>
+<H2><A id=serdm name=serdm></A>2 Sequence Normalization</H2>
+<P>An instance of the data model that is input to the serialization process is a 
+sequence. Prior to serializing a sequence using any of the output methods whose 
+behavior is specified by this document (<A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A>), the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> first compute a normalized sequence for serialization; it 
+is the normalized sequence that is actually serialized. [<A 
+id=sequence-normalization title="sequence normalization" 
+name=sequence-normalization>Definition</A>: The purpose of <B>sequence 
+normalization</B> is to create a sequence that can be serialized as a 
+well-formed XML document or external general parsed entity, that also reflects 
+the content of the input sequence to the extent possible.] [<A id=result-tree 
+title="result tree" name=result-tree>Definition</A>: The result of the <A 
+title="sequence normalization" 
+href="REC-xslt-xquery-serialization-20070123.htm#sequence-normalization">sequence 
+normalization</A> process is a <B>result tree</B>.]</P>
+<P>The normalized sequence for serialization is constructed by applying all of 
+the following rules in order, with the initial sequence being input to the first 
+step, and the sequence that results from any step being used as input to the 
+subsequent step. For any <A title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+output method, it is <A title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+whether this sequence normalization process takes place.</P>
+<P>Where the process of converting the input sequence to a normalized sequence 
+indicates that a value <STRONG>MUST</STRONG> be cast to <CODE>xs:string</CODE>, 
+that operation is defined in <A 
+href="http://www.w3.org/TR/xpath-functions/#casting-to-string">Section 17.1.2 
+Casting to xs:string and xs:untypedAtomic</A><SUP><SMALL>FO</SMALL></SUP> of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath-functions">[XQuery 
+1.0 and XPath 2.0 Functions and Operators]</A>. The steps in computing the 
+normalized sequence are:</P>
+<OL class=enumar>
+  <LI>
+  <P>If the sequence that is input to serialization is empty, create a sequence 
+  <EM>S<SUB>1</SUB></EM> that consists of a zero-length string. Otherwise, copy 
+  each item in the sequence that is input to serialization to create the new 
+  sequence <EM>S<SUB>1</SUB></EM>.</P>
+  <LI>
+  <P>For each item in <EM>S<SUB>1</SUB></EM>, if the item is atomic, obtain the 
+  lexical representation of the item by casting it to an <CODE>xs:string</CODE> 
+  and copy the string representation to the new sequence; otherwise, copy the 
+  item, which will be a <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>, 
+  to the new sequence. The new sequence is <EM>S<SUB>2</SUB></EM>.</P>
+  <LI>
+  <P>For each subsequence of adjacent strings in <EM>S<SUB>2</SUB></EM>, copy a 
+  single string to the new sequence equal to the values of the strings in the 
+  subsequence concatenated in order, each separated by a single space. Copy all 
+  other items to the new sequence. The new sequence is 
+  <EM>S<SUB>3</SUB></EM>.</P>
+  <LI>
+  <P>For each item in <EM>S<SUB>3</SUB></EM>, if the item is a string, create a 
+  text <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  in the new sequence whose <A title="string value" 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-string-value">string 
+  value</A> is equal to the string; otherwise, copy the item to the new 
+  sequence. The new sequence is <EM>S<SUB>4</SUB></EM>.</P>
+  <LI>
+  <P>For each item in <EM>S<SUB>4</SUB></EM>, if the item is a document <A 
+  title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>, 
+  copy its children to the new sequence; otherwise, copy the item to the new 
+  sequence. The new sequence is <EM>S<SUB>5</SUB></EM>.</P>
+  <LI>
+  <P>For each subsequence of adjacent text nodes in <EM>S<SUB>5</SUB></EM>, copy 
+  a single text node to the new sequence equal to the values of the text nodes 
+  in the subsequence concatenated in order. Any text nodes with values of zero 
+  length are dropped. Copy all other items to the new sequence. The new sequence 
+  is <EM>S<SUB>6</SUB></EM>.</P>
+  <LI>
+  <P>It is a <A title="serialization error" 
+  href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+  error</A> [<A title=err:SENR0001 
+  href="REC-xslt-xquery-serialization-20070123.htm#ERRSENR0001">err:SENR0001</A>] 
+  if an item in <EM>S<SUB>6</SUB></EM> is an attribute <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  or a namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>. 
+  Otherwise, construct a new sequence, <EM>S<SUB>7</SUB></EM>, that consists of 
+  a single document <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  and copy all the items in the sequence, which are all <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>, 
+  as children of that document <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>.</P></LI></OL>
+<P><EM>S<SUB>7</SUB></EM> is the normalized sequence.</P>
+<P>The <A title="result tree" 
+href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+tree</A> rooted at the document <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+that is created by the final step of this sequence normalization process is the 
+instance of the data model to which the rules of the appropriate output method 
+are applied. If the sequence normalization process results in a <A 
+title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A>, the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>The sequence normalization process for a sequence <CODE>$seq</CODE> is 
+equivalent to constructing a document <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+using the XSLT instruction:</P>
+<DIV class=exampleInner><PRE>&lt;xsl:document&gt;
+  &lt;xsl:copy-of select="$seq"/&gt;
+&lt;/xsl:document&gt;
+</PRE></DIV>
+<P>or the XQuery expression:</P>
+<DIV class=exampleInner><PRE>document {
+  for $s in $seq return
+    if ($s instance of document-node())
+    then $s/child::node()
+    else $s
+}
+</PRE></DIV>
+<P>This process results in a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SENR0001 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSENR0001">err:SENR0001</A>] 
+if sequences contain parentless attribute and/or namespace <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>.</P></DIV></DIV>
+<DIV class=div1>
+<H2><A id=serparam name=serparam></A>3 Serialization Parameters</H2>
+<P>There are a number of parameters that influence how serialization is 
+performed. <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">Host 
+languages</A> <STRONG>MAY</STRONG> allow users to specify any or all of these 
+parameters, but they are not <STRONG>REQUIRED</STRONG> to be able to do so. 
+However, the <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A> specification <STRONG>MUST</STRONG> specify how the value of all 
+applicable parameters is to be determined.</P>
+<P>It is a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SEPM0016 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSEPM0016">err:SEPM0016</A>] 
+if a parameter value is invalid for the given parameter. It is the 
+responsibility of the <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A> to specify how invalid values should be handled at the level of 
+that language.</P>
+<P>The following serialization parameters are defined:</P>
+<TABLE summary="Serialization parameters" border=1>
+  <COLGROUP>
+  <COL width=180>
+  <COL>
+  <THEAD>
+  <TR>
+    <TH align=left>Serialization parameter name</TH>
+    <TH align=left>Permitted values for parameter</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD><CODE>byte-order-mark</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE> or <CODE>no</CODE>. This 
+      parameter indicates whether the serialized sequence of octets is to be 
+      preceded by a Byte Order Mark. (See Section 5.1 of <A 
+      href="REC-xslt-xquery-serialization-20070123.htm#UNICODE-ENCODING">[Unicode 
+      Encoding]</A>.) The actual octet order used is <A 
+      title=implementation-dependent 
+      href="REC-xslt-xquery-serialization-20070123.htm#impdep">implementation-dependent</A>. 
+      If the encoding defines no Byte Order Mark, or if the Byte Order Mark is 
+      prohibited for the specific Unicode encoding or implementation 
+      environment, then this parameter is ignored.</TD></TR>
+  <TR>
+    <TD><CODE>cdata-section-elements</CODE></TD>
+    <TD>A list of expanded QNames, possibly empty.</TD></TR>
+  <TR>
+    <TD><CODE>doctype-public</CODE></TD>
+    <TD>A string of Unicode characters. This parameter may be absent.</TD></TR>
+  <TR>
+    <TD><CODE>doctype-system</CODE></TD>
+    <TD>A string of Unicode characters. This parameter may be absent.</TD></TR>
+  <TR>
+    <TD><CODE>encoding</CODE></TD>
+    <TD>A string of Unicode characters in the range #x21 to #x7E (that is, 
+      printable ASCII characters); the value <STRONG>SHOULD</STRONG> be a 
+      charset registered with the Internet Assigned Numbers Authority <A 
+      href="REC-xslt-xquery-serialization-20070123.htm#IANA">[IANA]</A>, 
+      <A 
+      href="REC-xslt-xquery-serialization-20070123.htm#RFC2278">[RFC2278]</A> 
+      or begin with the characters <CODE>x-</CODE> or <CODE>X-</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>escape-uri-attributes</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE> or 
+<CODE>no</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>include-content-type</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE> or 
+<CODE>no</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>indent</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE> or 
+<CODE>no</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>media-type</CODE></TD>
+    <TD>A string of Unicode characters specifying the media type (MIME content 
+      type) <A 
+      href="REC-xslt-xquery-serialization-20070123.htm#RFC2046">[RFC2046]</A>; 
+      the charset parameter of the media type <STRONG>MUST NOT</STRONG> be 
+      specified explicitly in the value of the <CODE>media-type</CODE> 
+      parameter. If the destination of the serialized output is annotated with a 
+      media type, this parameter <STRONG>MAY</STRONG> be used to provide such an 
+      annotation. For example, it <STRONG>MAY</STRONG> be used to set the media 
+      type in an HTTP header.</TD></TR>
+  <TR>
+    <TD><CODE>method</CODE></TD>
+    <TD>An expanded QName with a <A title="null namespace URI" 
+      href="REC-xslt-xquery-serialization-20070123.htm#null-namespace-URI">null 
+      namespace URI</A>, and the local part of the name equal to one of 
+      <CODE>xml</CODE>, <CODE>xhtml</CODE>, <CODE>html</CODE> or 
+      <CODE>text</CODE>, or having a <A title="non-null namespace URI" 
+      href="REC-xslt-xquery-serialization-20070123.htm#non-null-namespace-URI">non-null 
+      namespace URI</A>. If the namespace URI is non-null, the parameter 
+      specifies an <A title=implementation-defined 
+      href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+      output method.</TD></TR>
+  <TR>
+    <TD><CODE>normalization-form</CODE></TD>
+    <TD>One of the enumerated values <CODE>NFC</CODE>, <CODE>NFD</CODE>, 
+      <CODE>NFKC</CODE>, <CODE>NFKD</CODE>, <CODE>fully-normalized</CODE>, 
+      <CODE>none</CODE> or an <A title=implementation-defined 
+      href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+      value.</TD></TR>
+  <TR>
+    <TD><CODE>omit-xml-declaration</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE> or 
+<CODE>no</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>standalone</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE>, <CODE>no</CODE> or 
+      <CODE>omit</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>undeclare-prefixes</CODE></TD>
+    <TD>One of the enumerated values <CODE>yes</CODE> or 
+<CODE>no</CODE>.</TD></TR>
+  <TR>
+    <TD><CODE>use-character-maps</CODE></TD>
+    <TD>A list of pairs, possibly empty, with each pair consisting of a single 
+      Unicode character and a string of Unicode characters.</TD></TR>
+  <TR>
+    <TD><CODE>version</CODE></TD>
+    <TD>A string of Unicode characters.</TD></TR></TBODY></TABLE>
+<P>The value of the <CODE>method</CODE> parameter is an <A 
+title="expanded QName" 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-expanded-qname">expanded 
+QName</A>. If the value has a <A title="null namespace URI" 
+href="REC-xslt-xquery-serialization-20070123.htm#null-namespace-URI">null 
+namespace URI</A>, then the local name identifies a method specified in this 
+document and <STRONG>MUST</STRONG> be one of <CODE>xml</CODE>, 
+<CODE>html</CODE>, <CODE>xhtml</CODE>, or <CODE>text</CODE>; in this case, the 
+output method specified <STRONG>MUST</STRONG> be used for serializing. If the 
+namespace URI is non-null, then it identifies an <A title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+output method; the behavior in this case is not specified by this document.</P>
+<P>In those cases where they have no important effect on the content of the 
+serialized result, details of the output methods defined by this specification 
+are left unspecified and are regarded as <A title=implementation-dependent 
+href="REC-xslt-xquery-serialization-20070123.htm#impdep">implementation-dependent</A>. 
+Whether a <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+uses apostrophes or quotation marks to delimit attribute values in the XML 
+output method is an example of such a detail.</P>
+<P>The detailed semantics of each parameter will be described separately for 
+each output method <SPAN>for which it is applicable</SPAN>. <SPAN>If the 
+semantics of a parameter are not described for an output method, then it is not 
+applicable to that output method.</SPAN></P>
+<P>Implementations <STRONG>MAY</STRONG> define additional serialization 
+parameters, and <STRONG>MAY</STRONG> allow users to do so. For this purpose, the 
+name of a serialization parameter is considered to be a QName; the parameters 
+listed above are QNames in no namespace, while any additional serialization 
+parameters must have names that are namespace-qualified. If the serialization 
+method is one of the four methods <CODE>xml</CODE>, <CODE>html</CODE>, 
+<CODE>xhtml</CODE>, or <CODE>text</CODE>, then the additional serialization 
+parameters <STRONG>MAY</STRONG> affect the output of the serializer to the 
+extent (but only to the extent) that this specification leaves the output <A 
+title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+or <A title=implementation-dependent 
+href="REC-xslt-xquery-serialization-20070123.htm#impdep">implementation-dependent</A>. 
+For example, such parameters might control whether namespace declarations on an 
+element are written before or after the attributes of the element, or they might 
+define the number of space or tab characters to be inserted when the 
+<CODE>indent</CODE> parameter is set to <CODE>yes</CODE>; but they could not 
+instruct the serializer to suppress the error that occurs when the HTML output 
+method encounters illegal characters (see error [<A title=err:SERE0014 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0014">err:SERE0014</A>]).</P></DIV>
+<DIV class=div1>
+<H2><A id=serphases name=serphases></A>4 Phases of Serialization</H2>
+<P>Serialization comprises three phases of processing (preceded optionally by 
+the sequence normalization process described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serdm"><B>2 
+Sequence Normalization</B></A>).</P>
+<P>For an <A title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+output method, any of these phases <STRONG>MAY</STRONG> be skipped or 
+<STRONG>MAY</STRONG> be performed in a different order than is specified here. 
+For the output methods defined in this specification, these phases are carried 
+out sequentially as follows:</P>
+<OL class=enumar>
+  <LI>
+  <P>A <CODE>meta</CODE> element is added to the normalized sequence along with 
+  discarding an existing <CODE>meta</CODE> element, as controlled by the 
+  <CODE>include-content-type</CODE> parameter for the XHTML and HTML output 
+  methods.</P>
+  <LI>
+  <P><EM>Markup generation</EM> produces the character representation of those 
+  parts of the serialized result that describe the structure of the normalized 
+  sequence. In the cases of the XML, HTML and XHTML output methods, this phase 
+  produces the character representations of the following:</P>
+  <UL>
+    <LI>
+    <P>the document type declaration;</P>
+    <LI>
+    <P>start tags and end tags (except for attribute values, whose 
+    representation is produced by the character expansion phase);</P>
+    <LI>
+    <P>processing instructions; and</P>
+    <LI>
+    <P>comments.</P></LI></UL>
+  <P>In the cases of the XML and XHTML output methods, this phase also produces 
+  the following:</P>
+  <UL>
+    <LI>
+    <P>the XML or text declaration; and</P>
+    <LI>
+    <P>empty element tags (except for the attribute values);</P></LI></UL>In the 
+  case of the text output method, this phase has no effect. 
+  <LI>
+  <P><EM>Character expansion</EM> is concerned with the representation of 
+  characters appearing in text and attribute <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the normalized sequence. For each text and attribute <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>, 
+  the following rules are applied in sequence.</P>
+  <OL class=enumla>
+    <LI>
+    <P>If the node is an attribute that is a <A title="URI attribute values" 
+    href="REC-xslt-xquery-serialization-20070123.htm#uri-attribute-values">URI 
+    attribute value</A> and the <CODE>escape-uri-attributes</CODE> parameter is 
+    set to require escaping of URI attributes, apply <A title="URI Escaping" 
+    href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+    escaping</A> as defined below, and skip rules b-e. Otherwise, continue with 
+    rule b.</P>
+    <P>[<A id=uri-escaping title="URI Escaping" 
+    name=uri-escaping>Definition</A>: <B>URI escaping</B> consists of the 
+    following three steps applied in sequence to the content of <A 
+    title="URI attribute values" 
+    href="REC-xslt-xquery-serialization-20070123.htm#uri-attribute-values">URI 
+    attribute values</A>:]</P>
+    <OL class=enumlr>
+      <LI>
+      <P>normalize to NFC using the method defined in <A 
+      href="http://www.w3.org/TR/xpath-functions/#func-normalize-unicode">Section 
+      7.4.6 fn:normalize-unicode</A><SUP><SMALL>FO</SMALL></SUP></P>
+      <LI>
+      <P>percent-encode any special characters in the URI using the method 
+      defined in <A 
+      href="http://www.w3.org/TR/xpath-functions/#func-escape-html-uri">Section 
+      7.4.12 fn:escape-html-uri</A><SUP><SMALL>FO</SMALL></SUP></P>
+      <LI>
+      <P>escape according to HTML rules any characters (such as 
+      <CODE>&lt;</CODE> and <CODE>&amp;</CODE>) where HTML requires escaping, 
+      and any characters that cannot be represented in the selected encoding. 
+      For example, replace <CODE>&lt;</CODE> with <CODE>&amp;lt;</CODE>. (See 
+      also section <A 
+      href="REC-xslt-xquery-serialization-20070123.htm#HTML_CHARDATA"><B>7.3 
+      Writing Character Data</B></A>)</P></LI></OL>
+    <P>[<A id=uri-attribute-values title="URI attribute values" 
+    name=uri-attribute-values>Definition</A>: The values of attributes listed in 
+    <A 
+    href="REC-xslt-xquery-serialization-20070123.htm#list-of-uri-attributes"><B>C 
+    List of URI Attributes</B></A> are <B>URI attribute values</B>. Attributes 
+    are not considered to be URI attributes simply because they are namespace 
+    declaration attributes or have the type annotation 
+    <CODE>xs:anyURI</CODE>.]</P>
+    <LI>
+    <P>If the node is a text node whose parent element is selected by the rules 
+    of the <CODE>cdata-section-elements</CODE> parameter for the applicable 
+    output method, create CDATA sections as described below, and skip rules c-e. 
+    Otherwise, continue with rule c.</P>
+    <P>Apply the following two processes in sequence to create CDATA 
+sections</P>
+    <OL class=enumlr>
+      <LI>
+      <P><A title="Unicode Normalization" 
+      href="REC-xslt-xquery-serialization-20070123.htm#unicode-normalization">Unicode 
+      Normalization</A> if requested by the <CODE>normalization-form</CODE> 
+      parameter.</P>
+      <LI>
+      <P>apply changes as detailed in the description of the 
+      <CODE>cdata-section-elements</CODE> parameter for the applicable output 
+      method.</P></LI></OL>
+    <LI>
+    <P>Apply character mapping as determined by the 
+    <CODE>use-character-maps</CODE> parameter for the applicable output method. 
+    For characters that were substituted by this process, skip rules d and e. 
+    For the remaining characters that were not modified by character mapping, 
+    continue with rule d.</P>
+    <LI>
+    <P>Apply <A title="Unicode Normalization" 
+    href="REC-xslt-xquery-serialization-20070123.htm#unicode-normalization">Unicode 
+    Normalization</A> if requested by the <CODE>normalization-form</CODE> 
+    parameter.</P>
+    <P>[<A id=unicode-normalization title="Unicode Normalization" 
+    name=unicode-normalization>Definition</A>: <B>Unicode Normalization</B> is 
+    the process of removing alternate representations of equivalent sequences 
+    from textual data, to convert the data into a form that can be 
+    binary-compared for equivalence, as specified in <A 
+    href="REC-xslt-xquery-serialization-20070123.htm#UNICODE-NORMALIZATION-FORM">[UAX 
+    #15: Unicode Normalization Forms]</A>. For specific recommendations for 
+    character normalization on the World Wide Web, see <A 
+    href="REC-xslt-xquery-serialization-20070123.htm#charmod-norm">[Character 
+    Model for the World Wide Web 1.0: Normalization]</A>.]</P>
+    <P>The meanings associated with the possible values of the 
+    <CODE>normalization-form</CODE> parameter are defined in section <A 
+    href="REC-xslt-xquery-serialization-20070123.htm#XML_NORMALIZATION-FORM"><B>5.1.8 
+    XML Output Method: the normalization-form Parameter</B></A>.</P>
+    <P>Continue with step e.</P>
+    <LI>
+    <P>Escape according to XML or HTML rules, as determined by the applicable 
+    output method, any characters (such as <CODE>&lt;</CODE> and 
+    <CODE>&amp;</CODE>) where XML or HTML requires escaping, and any characters 
+    that cannot be represented in the selected encoding. For example, replace 
+    <CODE>&lt;</CODE> with <CODE>&amp;lt;</CODE>. (See also section <A 
+    href="REC-xslt-xquery-serialization-20070123.htm#HTML_CHARDATA"><B>7.3 
+    Writing Character Data</B></A>). For characters such as <CODE>&gt;</CODE> 
+    where XML defines a built-in entity but does not require its use in all 
+    circumstances, it is implementation-dependent whether the character is 
+    escaped.</P></LI></OL>
+  <LI>
+  <P><EM>Indentation</EM>, as controlled by the <CODE>indent</CODE> parameter, 
+  MAY add or remove whitespace according to the rules defined by the applicable 
+  output method.</P>
+  <LI>
+  <P><EM>Encoding</EM>, as controlled by the <CODE>encoding</CODE> parameter, 
+  converts the character stream produced by the previous phases into an octet 
+  stream.</P>
+  <DIV class=note>
+  <P class=prefix><B>Note:</B></P>
+  <P>Serialization is only defined in terms of encoding the result as a stream 
+  of octets. However, a <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  may provide an option that allows the encoding phase to be skipped, so that 
+  the result of serialization is a stream of Unicode characters. The effect of 
+  any such option is <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A>, 
+  and a <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  is not required to support such an option.</P></DIV></LI></OL></DIV>
+<DIV class=div1>
+<H2><A id=xml-output name=xml-output></A>5 XML Output Method</H2>
+<P>The XML output method serializes the normalized sequence as an XML entity 
+that <STRONG>MUST</STRONG> satisfy the rules for either a well-formed XML 
+document entity or a well-formed XML external general parsed entity, or both. A 
+<A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0003 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0003">err:SERE0003</A>] 
+results if the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is unable to satisfy those rules, except for content modified by the character 
+expansion phase of serialization, as described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serphases"><B>4 
+Phases of Serialization</B></A>. The effects of the character expansion phase 
+could result in the serialized output being not well-formed, but will not result 
+in a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A>. If a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> results, the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<P>If the document <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+of the normalized sequence has a single element <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+child and no text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+children, then the serialized output is a well-formed XML document entity, and 
+the serialized output <STRONG>MUST</STRONG> conform to the appropriate version 
+of the XML Namespaces Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#REC-xml-names">[XML 
+Names]</A> or <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-names11">[XML 
+Names 1.1]</A>. If the normalized sequence does not take this form, then the 
+serialized output is a well-formed XML external general parsed entity, which, 
+when referenced within a trivial XML document wrapper like this:</P>
+<DIV class=exampleInner><PRE>&lt;?xml version="<EM>version</EM>"?&gt;
+&lt;!DOCTYPE doc [
+&lt;!ENTITY e SYSTEM "<EM>entity-URI</EM>"&gt;
+]&gt;
+&lt;doc&gt;&amp;e;&lt;/doc&gt;
+</PRE></DIV>
+<P>where <CODE>entity-URI</CODE> is a URI for the entity, and the value of the 
+<CODE>version</CODE> pseudo-attribute is the value of the <CODE>version</CODE> 
+parameter, produces a document which <STRONG>MUST</STRONG> itself be a 
+well-formed XML document conforming to the corresponding version of the XML 
+Namespaces Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#REC-xml-names">[XML 
+Names]</A> or <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-names11">[XML 
+Names 1.1]</A>.</P>
+<P>[<A id=reconstructed-tree title="reconstructed tree" 
+name=reconstructed-tree>Definition</A>: A <B>reconstructed tree</B> may be 
+constructed by parsing the XML document and converting it into an instance of 
+the data model as specified in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath-datamodel">[XQuery 
+1.0 and XPath 2.0 Data Model]</A>.] The result of serialization 
+<STRONG>MUST</STRONG> be such that the <A title="reconstructed tree" 
+href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+tree</A> is the same as the <A title="result tree" 
+href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+tree</A> except for the following permitted differences:</P>
+<UL>
+  <LI>
+  <P>If the document was produced by adding a document wrapper, as described 
+  above, then it will contain an extra <CODE>doc</CODE> element as the document 
+  element.</P>
+  <LI>
+  <P>The order of attribute and namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the two trees <STRONG>MAY</STRONG> be different.</P>
+  <LI>
+  <P>The following properties of corresponding <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the two trees <STRONG>MAY</STRONG> be different:</P>
+  <UL>
+    <LI>
+    <P>the base-uri property of document <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+    and element <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>;</P>
+    <LI>
+    <P>the document-uri and unparsed-entities properties of document <A 
+    title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>;</P>
+    <LI>
+    <P>the type-name and typed-value properties of element and attribute <A 
+    title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>;</P>
+    <LI>
+    <P>the nilled property of element <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>;</P>
+    <LI>
+    <P>the content property of text <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>, 
+    due to the effect of the <CODE>indent</CODE> and 
+    <CODE>use-character-maps</CODE> parameters.</P></LI></UL>
+  <LI>
+  <P>The <A title="reconstructed tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+  tree</A> <STRONG>MAY</STRONG> contain additional attributes and text <A 
+  title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  resulting from the expansion of default and fixed values in its DTD or schema; 
+  also, in the presence of a DTD, non-CDATA attributes may lose whitespace 
+  characters as a result of attribute value normalization.</P>
+  <LI>
+  <P>The type annotations of the <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the two trees <STRONG>MAY</STRONG> be different. Type annotations in a <A 
+  title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A> are discarded when the tree is serialized. Any new type annotations 
+  obtained by parsing the document will depend on whether the serialized XML 
+  document is assessed against a schema, and this <STRONG>MAY</STRONG> result in 
+  type annotations that are different from those in the original <A 
+  title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A>.</P>
+  <DIV class=note>
+  <P class=prefix><B>Note:</B></P>
+  <P>In order to influence the type annotations in the instance of the data 
+  model that would result from processing a serialized XML document, the author 
+  of the XSLT stylesheet, XQuery expression or other process might wish to 
+  create the instance of the data model that is input to the serialization 
+  process so that it makes use of mechanisms provided by <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#xmlschema-1">[XML 
+  Schema]</A>, such as <CODE>xsi:type</CODE> and <CODE>xsi:schemaLocation</CODE> 
+  attributes. The serialization process will not automatically create such 
+  attributes in the serialized document if those attributes were not part of the 
+  <A title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A> that is to be serialized.</P>
+  <P>Similarly, it is possible that an element <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  in the instance of the data model that is to be serialized has the 
+  <CODE>nilled</CODE> property with the value <CODE>true</CODE>, but no 
+  <CODE>xsi:nil</CODE> attribute. The serialization process will not create such 
+  an attribute in the serialized document simply to reflect the value of the 
+  property. The value of the <CODE>nilled</CODE> property has no direct effect 
+  on the serialized result.</P></DIV>
+  <LI>
+  <P>Additional namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  <STRONG>MAY</STRONG> be present in the <A title="reconstructed tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+  tree</A> if the serialization process did not undeclare one or more 
+  namespaces, as described in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#xml-undeclare-NS"><B>5.1.7 
+  XML Output Method: the undeclare-prefixes Parameter</B></A>, and the starting 
+  instance of the data model contained an element <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  with a namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  that declared some prefix, but a child element of that <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  did not have any namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  that declared the same prefix.</P>
+  <P>The <A title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A> <STRONG>MAY</STRONG> contain namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  that are not present in the <A title="reconstructed tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+  tree</A>, as the process of creating an instance of the data model 
+  <STRONG>MAY</STRONG> ignore namespace declarations in some circumstances. See 
+  <A href="http://www.w3.org/TR/xpath-datamodel/#const-infoset-element">Section 
+  6.2.3 Construction from an Infoset</A><SUP><SMALL>DM</SMALL></SUP> and <A 
+  href="http://www.w3.org/TR/xpath-datamodel/#const-psvi-element">Section 6.2.4 
+  Construction from a PSVI</A><SUP><SMALL>DM</SMALL></SUP> of <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#xpath-datamodel">[XQuery 
+  1.0 and XPath 2.0 Data Model]</A> for additional information.</P>
+  <LI>
+  <P>If the <CODE>indent</CODE> parameter has the value <CODE>yes</CODE>,</P>
+  <UL>
+    <LI>
+    <P>additional text <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+    consisting of whitespace characters <STRONG>MAY</STRONG> be present in the 
+    <A title="reconstructed tree" 
+    href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+    tree</A>; and</P>
+    <LI>
+    <P>text <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+    in the <A title="result tree" 
+    href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+    tree</A> that contained only whitespace characters <STRONG>MAY</STRONG> 
+    correspond to text <A title=node 
+    href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+    in the <A title="reconstructed tree" 
+    href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+    tree</A> that contain additional whitespace characters that were not present 
+    in the <A title="result tree" 
+    href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+    tree</A></P></LI></UL>
+  <P>See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#xml-indent"><B>5.1.3 
+  XML Output Method: the indent Parameter</B></A> for more information on the 
+  <CODE>indent</CODE> parameter.</P>
+  <LI>
+  <P>Additional <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  <STRONG>MAY</STRONG> be present in the <A title="reconstructed tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+  tree</A> due to the effect of character mapping in the character expansion 
+  phase, and the values of attribute <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  and text <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the <A title="reconstructed tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+  tree</A> <STRONG>MAY</STRONG> be different from those in the <A 
+  title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A>, due to the effects of URI expansion, character mapping and <A 
+  title="Unicode Normalization" 
+  href="REC-xslt-xquery-serialization-20070123.htm#unicode-normalization">Unicode 
+  Normalization</A> in the character expansion phase of serialization.</P>
+  <DIV class=note>
+  <P class=prefix><B>Note:</B></P>
+  <P>The <CODE>use-character-maps</CODE> parameter can cause arbitrary 
+  characters to be inserted into the serialized XML document in an unescaped 
+  form, including characters that would be considered to be part of XML markup. 
+  Such characters could result in arbitrary new element <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>, 
+  attribute <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A>, 
+  and so on, in the <A title="reconstructed tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#reconstructed-tree">reconstructed 
+  tree</A> that results from processing the serialized XML 
+  document.</P></DIV></LI></UL>
+<P>A consequence of this rule is that certain characters <STRONG>MUST</STRONG> 
+be output as character references, to ensure that they survive the round trip 
+through serialization and parsing. Specifically, CR, NEL and LINE SEPARATOR 
+characters in text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+<STRONG>MUST</STRONG> be output respectively as "<CODE>&amp;#xD;</CODE>", 
+"<CODE>&amp;#x85;</CODE>", and "<CODE>&amp;#x2028;</CODE>", or their 
+equivalents; while CR, NL, TAB, NEL and LINE SEPARATOR characters in attribute 
+<A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+<STRONG>MUST</STRONG> be output respectively as "<CODE>&amp;#xD;</CODE>", 
+"<CODE>&amp;#xA;</CODE>", "<CODE>&amp;#x9;</CODE>", "<CODE>&amp;#x85;</CODE>", 
+and "<CODE>&amp;#x2028;</CODE>", or their equivalents. In addition, the 
+non-whitespace control characters #x1 through #x1F and #x7F through #x9F in text 
+<A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+and attribute <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+<STRONG>MUST</STRONG> be output as character references.</P>
+<P>For example, an attribute with the value "x" followed by "y" separated by a 
+newline will result in the output <CODE>"x&amp;#xA;y"</CODE> (or with any 
+equivalent character reference). The XML output cannot be "x" followed by a 
+literal newline followed by a "y" because after parsing, the attribute value 
+would be <CODE>"x y"</CODE> as a consequence of the XML attribute normalization 
+rules.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>XML 1.0 did not permit an XML processor to normalize NEL or LINE SEPARATOR 
+characters to a LINE FEED character. However, if a document entity that 
+specifies version 1.1 invokes an external general parsed entity with no text 
+declaration or a text declaration that specifies version 1.0, the external 
+parsed entity is processed according to the rules of XML 1.1. For this reason, 
+NEL and LINE SEPARATOR characters in text and attribute <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+must always be escaped using character references, regardless of the value of 
+the <CODE>version</CODE> parameter.</P>
+<P>XML 1.0 permitted control characters in the range #x7F through #x9F to appear 
+as literal characters in an XML document, but XML 1.1 requires such characters, 
+other than NEL, to be escaped as character references. An external general 
+parsed entity with no text declaration or a text declaration that specifies a 
+version pseudo-attribute with value <CODE>1.0</CODE> that is invoked by an XML 
+1.1 document entity must follow the rules of XML 1.1. Therefore, the 
+non-whitespace control characters in the ranges #x1 through #x1F and #x7F 
+through #x9F must always be escaped, regardless of the value of the 
+<CODE>version</CODE> parameter.</P></DIV>
+<P>It is a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SEPM0004 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSEPM0004">err:SEPM0004</A>] 
+to specify the doctype-system parameter, or to specify the standalone parameter 
+with a value other than <CODE>omit</CODE>, if the instance of the data model 
+contains text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+or multiple element <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+as children of the root <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>. 
+The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> either signal the error, or recover by ignoring the 
+request to output a document type declaration or <CODE>standalone</CODE> 
+parameter.</P>
+<DIV class=div2>
+<H3><A id=XML_PARAMS name=XML_PARAMS></A>5.1 The Influence of Serialization 
+Parameters upon the XML Output Method</H3>
+<DIV class=div3>
+<H4><A id=XML_VERSION name=XML_VERSION></A>5.1.1 XML Output Method: the 
+<CODE>version</CODE> Parameter</H4>
+<P>The <CODE>version</CODE> parameter specifies the version of XML and the 
+version of Namespaces in XML to be used for outputting the instance of the data 
+model. The version output in the XML declaration (if an XML declaration is not 
+omitted) <STRONG>MUST</STRONG> correspond to the version of XML that the <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+used for outputting the instance of the data model. <SPAN>The value of the 
+<CODE>version</CODE> parameter <STRONG>MUST</STRONG> match the <A 
+href="http://www.w3.org/TR/REC-xml/#NT-VersionNum">VersionNum</A> 
+<SUP><SMALL>XML</SMALL></SUP> production of the XML Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#REC-xml">[XML10]</A> 
+or <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml11">[XML11]</A>.</SPAN> 
+A serialization error [<A title=err:SESU0013 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0013">err:SESU0013</A>] 
+results if the value of the <CODE>version</CODE> parameter specifies a version 
+of XML that is not supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>; 
+the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<P>If the serialized result would contain an <A 
+href="http://www.w3.org/TR/REC-xml-names/#NT-NCName">NCName</A> 
+<SUP><SMALL>Names</SMALL></SUP> that contains a character that is not permitted 
+by the version of Namespaces in XML specified by the <CODE>version</CODE> 
+parameter, a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0005 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0005">err:SERE0005</A>] 
+results. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<P>If the serialized result would contain a character that is not permitted by 
+the version of XML specified by the <CODE>version</CODE> parameter, a <A 
+title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0006 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0006">err:SERE0006</A>] 
+results. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<DIV class=exampleOuter>
+<P>For example, if the <CODE>version</CODE> parameter has the value 
+<CODE>1.0</CODE>, and the instance of the data model contains a non-whitespace 
+control character in the range #x1 to #x1F, a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0006 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0006">err:SERE0006</A>] 
+results. If the <CODE>version</CODE> parameter has the value <CODE>1.1</CODE> 
+and a comment <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+in the instance of the data model contains a non-whitespace control character in 
+the range #x1 to #x1F or a control character other than NEL in the range #x7F to 
+#x9F, a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0006 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0006">err:SERE0006</A>] 
+results.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XML_ENCODING name=XML_ENCODING></A>5.1.2 XML Output Method: the 
+<CODE>encoding</CODE> Parameter</H4>
+<P>The <CODE>encoding</CODE> parameter specifies the encoding to be used for 
+outputting the instance of the data model. <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">Serializers</A> 
+are <STRONG>REQUIRED</STRONG> to support values of <CODE>UTF-8</CODE> and 
+<CODE>UTF-16</CODE>. A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0007 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0007">err:SESU0007</A>] 
+occurs if an output encoding other than <CODE>UTF-8</CODE> or 
+<CODE>UTF-16</CODE> is requested and the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+does not support that encoding. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error, or recover by using <CODE>UTF-8</CODE> 
+or <CODE>UTF-16</CODE> instead. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST NOT</STRONG> use an encoding whose name does not match the <A 
+href="http://www.w3.org/TR/REC-xml/#NT-EncName">EncName</A> 
+<SUP><SMALL>XML</SMALL></SUP> production of the XML Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#REC-xml">[XML10]</A>.</P>
+<P>When outputting a newline character in the instance of the data model, the <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is free to represent it using any character sequence that will be normalized to 
+a newline character by an XML parser, unless a specific mapping for the newline 
+character is provided in a character map (see <A 
+href="REC-xslt-xquery-serialization-20070123.htm#character-maps"><B>9 
+Character Maps</B></A>).</P>
+<P>When outputting any other character that is defined in the selected encoding, 
+the character <STRONG>MUST</STRONG> be output using the correct representation 
+of that character in the selected encoding.</P>
+<P>It is possible that the instance of the data model will contain a character 
+that cannot be represented in the encoding that the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is using for output. In this case, if the character occurs in a context where 
+XML recognizes character references (that is, in the value of an attribute <A 
+title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+or text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>), 
+then the character <STRONG>MUST</STRONG> be output as a character reference. A 
+<A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0008 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0008">err:SERE0008</A>] 
+occurs if such a character appears in a context where character references are 
+not allowed (for example, if the character occurs in the name of an element). 
+The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<DIV class=exampleOuter>
+<P>For example, if a text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+contains the character LATIN SMALL LETTER E WITH ACUTE (#xE9), and the value of 
+the <CODE>encoding</CODE> parameter is <CODE>US-ASCII</CODE>, the character 
+<STRONG>MUST</STRONG> be serialized as a character reference. If a comment <A 
+title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+contains the same character, a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0008 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0008">err:SERE0008</A>] 
+results.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=xml-indent name=xml-indent></A>5.1.3 XML Output Method: the 
+<CODE>indent</CODE> Parameter</H4>
+<P>If the <CODE>indent</CODE> parameter has the value <CODE>yes</CODE>, then the 
+XML output method <STRONG>MAY</STRONG> output whitespace in addition to the 
+whitespace in the instance of the data model in order to indent the result so 
+that a person will find it easier to read; if the <CODE>indent</CODE> parameter 
+has the value <CODE>no</CODE>, it <STRONG>MUST NOT</STRONG> output any 
+additional whitespace. If the XML output method does output additional 
+whitespace, it <STRONG>MUST</STRONG> use an algorithm to output additional 
+whitespace that satisfies all of the following constraints:</P>
+<UL>
+  <LI>
+  <P>Whitespace characters <STRONG>MUST NOT</STRONG> be added adjacent to a text 
+  <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  that contains non-whitespace characters.</P>
+  <LI>
+  <P>Whitespace characters <STRONG>MUST NOT</STRONG> be added other than 
+  adjacent to an element <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>, 
+  that is, immediately before a start tag or immediately after an end tag.</P>
+  <LI>
+  <P>Whitespace characters <STRONG>MUST NOT</STRONG> be inserted in a part of 
+  the result document that is controlled by an <CODE>xml:space</CODE> attribute 
+  with value <CODE>preserve</CODE>. (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#REC-xml">[XML10]</A> 
+  for more information about the <CODE>xml:space</CODE> attribute.)</P>
+  <LI>
+  <P>Whitespace characters <STRONG>SHOULD NOT</STRONG> be added in places where 
+  the characters would constitute significant whitespace, for example, in the 
+  content of an element whose content model is known to be mixed.</P></LI></UL>
+<P>In any location where the above rules allow the addition of whitespace 
+characters, existing whitespace characters <STRONG>MAY</STRONG> also be removed 
+or replaced. For example, a tab <STRONG>MAY</STRONG> be inserted as a 
+replacement for existing spaces.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>The effect of these rules is to ensure that whitespace is only added in 
+places where (a) XSLT's <CODE>&lt;xsl:strip-space&gt;</CODE> declaration could 
+cause it to be removed, and (b) it does not affect the <A title="string value" 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-string-value">string 
+value</A> of any element <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+with simple content. It is usually not safe to indent document types that 
+include elements with mixed content.</P></DIV>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>The whitespace added may possibly be based on whitespace stripped from either 
+the source document or the stylesheet (in the case of XSLT), or guided by other 
+means that might depend on the <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A>, in the case of an instance of the data model created using some 
+other process.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XML_CDATA-SECTION-ELEMENTS name=XML_CDATA-SECTION-ELEMENTS></A>5.1.4 
+XML Output Method: the <CODE>cdata-section-elements</CODE> Parameter</H4>
+<P>The <CODE>cdata-section-elements</CODE> parameter contains a list of expanded 
+QNames. If the expanded QName of the parent of a text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+is a member of the list, then the text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+<STRONG>MUST</STRONG> be output as a CDATA section, except in those 
+circumstances described below.</P>
+<P>If the text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+contains the sequence of characters <CODE>]]&gt;</CODE>, then the currently open 
+CDATA section <STRONG>MUST</STRONG> be closed following the <CODE>]]</CODE> and 
+a new CDATA section opened before the <CODE>&gt;</CODE>.</P>
+<P>If the text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+contains characters that are not representable in the character encoding being 
+used to output the instance of the data model, then the currently open CDATA 
+section <STRONG>MUST</STRONG> be closed before such characters, the characters 
+<STRONG>MUST</STRONG> be output using character references or entity references, 
+and a new CDATA section <STRONG>MUST</STRONG> be opened for any further 
+characters in the text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A>.</P>
+<P>CDATA sections <STRONG>MUST NOT</STRONG> be used except where they have been 
+explicitly requested by the user, either by using the 
+<CODE>cdata-section-elements</CODE> parameter, or by using some other <A 
+title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+mechanism.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This is phrased to permit an implementor to provide an option that attempts 
+to preserve CDATA sections present in the source document.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XML_OMIT-XML-DECLARATION name=XML_OMIT-XML-DECLARATION></A>5.1.5 XML 
+Output Method: the <CODE>omit-xml-declaration</CODE> and <CODE>standalone</CODE> 
+Parameters</H4>
+<P>The XML output method <STRONG>MUST</STRONG> output an XML declaration if the 
+<CODE>omit-xml-declaration</CODE> parameter has the value <CODE>no</CODE>. The 
+XML declaration <STRONG>MUST</STRONG> include both version information and an 
+encoding declaration. If the <CODE>standalone</CODE> parameter has the value 
+<CODE>yes</CODE> or the value <CODE>no</CODE>, the XML declaration 
+<STRONG>MUST</STRONG> include a standalone document declaration with the same 
+value as the value of the <CODE>standalone</CODE> parameter. If the 
+<CODE>standalone</CODE> parameter has the value <CODE>omit</CODE>, the XML 
+declaration <STRONG>MUST NOT</STRONG> include a standalone document declaration; 
+this ensures that it is both an XML declaration (allowed at the beginning of a 
+document entity) and a text declaration (allowed at the beginning of an external 
+general parsed entity).</P>
+<P>A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SEPM0009 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSEPM0009">err:SEPM0009</A>] 
+results if the <CODE>omit-xml-declaration</CODE> parameter has the value 
+<CODE>yes</CODE>, and</P>
+<UL>
+  <LI>
+  <P>the <CODE>standalone</CODE> parameter has a value other than 
+  <CODE>omit</CODE>; or</P>
+  <LI>
+  <P>the <CODE>version</CODE> parameter has a value other than <CODE>1.0</CODE> 
+  and the <CODE>doctype-system</CODE> parameter is specified.</P></LI></UL>The <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error. 
+<P>Otherwise, if the <CODE>omit-xml-declaration</CODE> parameter has the value 
+<CODE>yes</CODE>, the XML output method <STRONG>MUST NOT</STRONG> output an XML 
+declaration.</P></DIV>
+<DIV class=div3>
+<H4><A id=XML_DOCTYPE name=XML_DOCTYPE></A>5.1.6 XML Output Method: the 
+<CODE>doctype-system</CODE> and <CODE>doctype-public</CODE> Parameters</H4>
+<P>If the <CODE>doctype-system</CODE> parameter is specified, the XML output 
+method <STRONG>MUST</STRONG> output a document type declaration immediately 
+before the first element. The name following <CODE>&lt;!DOCTYPE</CODE> 
+<STRONG>MUST</STRONG> be the name of the first element, if any. If the 
+<CODE>doctype-public</CODE> parameter is also specified, then the XML output 
+method <STRONG>MUST</STRONG> output <CODE>PUBLIC</CODE> followed by the public 
+identifier and then the system identifier; otherwise, it <STRONG>MUST</STRONG> 
+output <CODE>SYSTEM</CODE> followed by the system identifier. The internal 
+subset <STRONG>MUST</STRONG> be empty. The <CODE>doctype-public</CODE> parameter 
+<STRONG>MUST</STRONG> be ignored unless the <CODE>doctype-system</CODE> 
+parameter is specified.</P></DIV>
+<DIV class=div3>
+<H4><A id=xml-undeclare-NS name=xml-undeclare-NS></A>5.1.7 XML Output Method: 
+the <CODE>undeclare-prefixes</CODE> Parameter</H4>
+<P>The Data Model allows an element <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+that binds a non-empty prefix to have a child element <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+that does not bind that same prefix. In <EM>Namespaces in XML 1.1</EM> (<A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-names11">[XML 
+Names 1.1]</A>), this can be represented accurately by undeclaring prefixes. For 
+the undeclaring prefix of the child element node, if the 
+<CODE>undeclare-prefixes</CODE> parameter has the value <CODE>yes</CODE>, the 
+output method is XML or XHTML, and the <CODE>version</CODE> parameter value is 
+greater than <CODE>1.0</CODE>, the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> undeclare its namespace. If the 
+<CODE>undeclare-prefixes</CODE> parameter has the value <CODE>no</CODE> and the 
+output method is XML or XHTML, then the undeclaration of prefixes <STRONG>MUST 
+NOT</STRONG> occur.</P>
+<DIV class=exampleOuter>
+<P>Consider an element <CODE>x:foo</CODE> with four in-scope namespaces that 
+associate prefixes with URIs as follows:</P>
+<UL>
+  <LI>
+  <P><CODE>x</CODE> is associated with <CODE>http://example.org/x</CODE></P>
+  <LI>
+  <P><CODE>y</CODE> is associated with <CODE>http://example.org/y</CODE></P>
+  <LI>
+  <P><CODE>z</CODE> is associated with <CODE>http://example.org/z</CODE></P>
+  <LI>
+  <P><CODE>xml</CODE> is associated with 
+  <CODE>http://www.w3.org/XML/1998/namespace</CODE></P></LI></UL>
+<P>Suppose that it has a child element <CODE>x:bar</CODE> with three in-scope 
+namespaces:</P>
+<UL>
+  <LI>
+  <P><CODE>x</CODE> is associated with <CODE>http://example.org/x</CODE></P>
+  <LI>
+  <P><CODE>y</CODE> is associated with <CODE>http://example.org/y</CODE></P>
+  <LI>
+  <P><CODE>xml</CODE> is associated with 
+  <CODE>http://www.w3.org/XML/1998/namespace</CODE></P></LI></UL>
+<P>If namespace undeclaration is in effect, it will be serialized this way:</P>
+<DIV class=exampleInner><PRE>&lt;x:foo xmlns:x="http://example.org/x"
+       xmlns:y="http://example.org/y"
+       xmlns:z="http://example.org/z"&gt;
+       
+       &lt;x:bar xmlns:z=""&gt;...&lt;/x:bar&gt;
+       
+&lt;/x:foo&gt;
+</PRE></DIV></DIV>
+<P>In <EM>Namespaces in XML</EM> 1.0 (<A 
+href="REC-xslt-xquery-serialization-20070123.htm#REC-xml-names">[XML 
+Names]</A>), prefix undeclaration is not possible. If the output method is XML 
+or XHTML, the value of the <CODE>undeclare-prefixes</CODE> parameter is 
+<CODE>yes</CODE>, and the value of the <CODE>version</CODE> parameter is 
+<CODE>1.0</CODE>, a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SEPM0010 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSEPM0010">err:SEPM0010</A>] 
+results; the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P></DIV>
+<DIV class=div3>
+<H4><A id=XML_NORMALIZATION-FORM name=XML_NORMALIZATION-FORM></A>5.1.8 XML 
+Output Method: the <CODE>normalization-form</CODE> Parameter</H4>
+<P>The <CODE>normalization-form</CODE> parameter is applicable to the XML output 
+method. The values <CODE>NFC</CODE> and <CODE>none</CODE> <STRONG>MUST</STRONG> 
+be supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>. 
+A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0011 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0011">err:SESU0011</A>] 
+results if the value of the <CODE>normalization-form</CODE> parameter specifies 
+a normalization form that is not supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>; 
+the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<P>The meanings associated with the possible values of the 
+<CODE>normalization-form</CODE> parameter are as follows:</P>
+<UL>
+  <LI>
+  <P><CODE>NFC</CODE> specifies the serialized result will be in Normalization 
+  Form C, using the rules specified in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#charmod-norm">[Character 
+  Model for the World Wide Web 1.0: Normalization]</A>.</P>
+  <LI>
+  <P><CODE>NFD</CODE> specifies the serialized result will be in Normalization 
+  Form D, as specified in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#UNICODE-NORMALIZATION-FORM">[UAX 
+  #15: Unicode Normalization Forms]</A>.</P>
+  <LI>
+  <P><CODE>NFKC</CODE> specifies the serialized result will be in Normalization 
+  Form KC, as specified in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#UNICODE-NORMALIZATION-FORM">[UAX 
+  #15: Unicode Normalization Forms]</A>.</P>
+  <LI>
+  <P><CODE>NFKD</CODE> specifies the serialized result will be in Normalization 
+  Form KD, as specified in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#UNICODE-NORMALIZATION-FORM">[UAX 
+  #15: Unicode Normalization Forms]</A>.</P>
+  <LI>
+  <P><CODE>fully-normalized</CODE> specifies the serialized result will be in 
+  fully normalized text, as specified in <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#charmod-norm">[Character 
+  Model for the World Wide Web 1.0: Normalization]</A>.</P>
+  <LI>
+  <P><CODE>none</CODE> specifies that no <A title="Unicode Normalization" 
+  href="REC-xslt-xquery-serialization-20070123.htm#unicode-normalization">Unicode 
+  Normalization</A> will be applied.</P>
+  <LI>
+  <P>An <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  value has an <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  effect.</P></LI></UL>
+<P>If the value of the parameter is <CODE>fully-normalized</CODE>, then no 
+<EM>relevant construct</EM> of the parsed entity created by the <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+may start with a composing character. The term <EM>relevant construct</EM> has 
+the meaning defined in section 2.13 of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml11">[XML11]</A>. 
+If this condition is not satisfied, a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0012 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0012">err:SERE0012</A>] 
+<STRONG>MUST</STRONG> be signaled.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>Specifying <CODE>fully-normalized</CODE> as the value of this parameter does 
+not guarantee that the XML document output by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+will in fact be fully normalized as defined in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml11">[XML11]</A>. 
+This is because the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+does not check that the text is <CODE>include normalized</CODE>, which would 
+involve checking all external entities that it refers to (such as an external 
+DTD). Furthermore, the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+does not check whether any character escape generated using character maps 
+represents a composing character.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XML_MEDIA-TYPE name=XML_MEDIA-TYPE></A>5.1.9 XML Output Method: the 
+<CODE>media-type</CODE> Parameter</H4>
+<P>The <CODE>media-type</CODE> parameter is applicable to the XML output method. 
+See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=XML_USE-CHARACTER-MAPS name=XML_USE-CHARACTER-MAPS></A>5.1.10 XML 
+Output Method: the <CODE>use-character-maps</CODE> Parameter</H4>
+<P>The <CODE>use-character-maps</CODE> parameter is applicable to the XML output 
+method. The result of serialization using the XML output method is not 
+guaranteed to be well-formed XML if character maps have been specified. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#character-maps"><B>9 
+Character Maps</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=XML_BYTE-ORDER-MARK name=XML_BYTE-ORDER-MARK></A>5.1.11 XML Output 
+Method: the <CODE>byte-order-mark</CODE> Parameter</H4>
+<P>The <CODE>byte-order-mark</CODE> parameter is applicable to the XML output 
+method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A> for more information.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>The byte order mark may be undesirable under certain circumstances; for 
+example, to concatenate resulting XML fragments without additional processing to 
+remove the byte order mark. Therefore this specification does not mandate the 
+<CODE>byte-order-mark</CODE> parameter to have the value <CODE>yes</CODE> when 
+the encoding is UTF-16, even though the XML 1.0 and XML 1.1 specifications state 
+that entities encoded in UTF-16 must begin with a byte order mark. Consequently, 
+this specification does not guarantee that the resulting XML fragment, without a 
+byte order mark, will not cause an error when processed by a conforming XML 
+processor.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XML_ESCAPE-URI-ATTRIBUTES name=XML_ESCAPE-URI-ATTRIBUTES></A>5.1.12 
+XML Output Method: the <CODE>escape-uri-attributes</CODE> Parameter</H4>
+<P>The <CODE>escape-uri-attributes</CODE> parameter is not applicable to the XML 
+output method. It is the responsibility of the <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A> to specify whether an error occurs if this parameter is specified 
+in combination with the XML output method, or if the parameter is simply 
+dropped.</P></DIV>
+<DIV class=div3>
+<H4><A id=XML_INCLUDE-CONTENT-TYPE name=XML_INCLUDE-CONTENT-TYPE></A>5.1.13 XML 
+Output Method: the <CODE>include-content-type</CODE> Parameter</H4>
+<P>The <CODE>include-content-type</CODE> parameter is not applicable to the XML 
+output method. It is the responsibility of the <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A> to specify whether an error occurs if this parameter is specified 
+in combination with the XML output method, or if the parameter is simply 
+dropped.</P></DIV></DIV></DIV>
+<DIV class=div1>
+<H2><A id=xhtml-output name=xhtml-output></A>6 XHTML Output Method</H2>
+<P>The XHTML output method serializes the instance of the data model as XML, 
+using the HTML compatibility guidelines defined in the XHTML specification.</P>
+<P>It is entirely the responsibility of the person or process that creates the 
+instance of the data model to ensure that the instance of the data model 
+conforms to the <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml1">[XHTML 
+1.0]</A> or <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml11">[XHTML 
+1.1]</A> specification. It is not an error if the instance of the data model is 
+invalid XHTML. Equally, it is entirely under the control of the person or 
+process that creates the instance of the data model whether the output conforms 
+to XHTML 1.0 Strict, XHTML 1.0 Transitional, or any other specific definition of 
+XHTML.</P>
+<P>The serialization of the instance of the data model follows the same rules as 
+for the XML output method, with the <SPAN>general</SPAN> exceptions noted below 
+<SPAN>and parameter-specific exceptions in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XHTML_PARAMS"><B>6.1 
+The Influence of Serialization Parameters upon the XHTML Output 
+Method</B></A></SPAN>. These differences are based on the HTML compatibility 
+guidelines published in Appendix C of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml1">[XHTML 
+1.0]</A>, which are designed to ensure that as far as possible, XHTML is 
+rendered correctly on user agents designed originally to handle HTML.</P>
+<UL>
+  <LI>
+  <P>[<A id=XHTMLEMPTY title=EMPTY name=XHTMLEMPTY>Definition</A>: The following 
+  XHTML elements have an <B>EMPTY</B> content model: <CODE>area</CODE>, 
+  <CODE>base</CODE>, <CODE>br</CODE>, <CODE>col</CODE>, <CODE>hr</CODE>, 
+  <CODE>img</CODE>, <CODE>input</CODE>, <CODE>link</CODE>, <CODE>meta</CODE>, 
+  <CODE>basefont</CODE>, <CODE>frame</CODE>, <CODE>isindex</CODE>, and 
+  <CODE>param</CODE>.] Given an empty instance of an XHTML element whose content 
+  model is not <A title=EMPTY 
+  href="REC-xslt-xquery-serialization-20070123.htm#XHTMLEMPTY">EMPTY</A> 
+  (for example, an empty title or paragraph) the <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  <STRONG>MUST NOT</STRONG> use the minimized form. That is, it 
+  <STRONG>MUST</STRONG> output <CODE>&lt;p&gt;&lt;/p&gt;</CODE> and not 
+  <CODE>&lt;p&nbsp;/&gt;</CODE>.</P>
+  <LI>
+  <P>Given an XHTML element whose content model is <A title=EMPTY 
+  href="REC-xslt-xquery-serialization-20070123.htm#XHTMLEMPTY">EMPTY</A>, 
+  the <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  <STRONG>MUST</STRONG> use the minimized tag syntax, for example 
+  <CODE>&lt;br&nbsp;/&gt;</CODE>, as the alternative syntax 
+  <CODE>&lt;br&gt;&lt;/br&gt;</CODE> allowed by XML gives uncertain results in 
+  many existing user agents. The <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  <STRONG>MUST</STRONG> include a space before the trailing <CODE>/&gt;</CODE>, 
+  e.g. <CODE>&lt;br&nbsp;/&gt;</CODE>, <CODE>&lt;hr&nbsp;/&gt;</CODE> and 
+  <CODE>&lt;img&nbsp;src="karen.jpg"&nbsp; alt="Karen"&nbsp;/&gt;</CODE>.</P>
+  <LI>
+  <P>The <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  <STRONG>MUST NOT</STRONG> use the entity reference <CODE>&amp;apos;</CODE> 
+  which, although legal in XML and therefore in XHTML, is not defined in HTML 
+  and is not recognized by all HTML user agents.</P>
+  <LI>
+  <P>The <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  <STRONG>SHOULD</STRONG> output namespace declarations in a way that is 
+  consistent with the requirements of the XHTML DTD if this is possible. The 
+  XHTML 1.0 DTDs require the declaration 
+  <CODE>xmlns="http://www.w3.org/1999/xhtml"</CODE> to appear on the 
+  <CODE>html</CODE> element, and only on the <CODE>html</CODE> element. The <A 
+  title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  <STRONG>MUST</STRONG> output namespace declarations that are consistent with 
+  the namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  present in the <A title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A>, but it <STRONG>MUST</STRONG> avoid outputting redundant namespace 
+  declarations on elements where the DTD would make them invalid.</P>
+  <DIV class=note>
+  <P class=prefix><B>Note:</B></P>
+  <P>If the <CODE>html</CODE> element is generated by an XSLT literal result 
+  element of the form <CODE>&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt; 
+  ... &lt;/html&gt;</CODE>, or by an XQuery direct element constructor of the 
+  same form, then the <CODE>html</CODE> element in the result document will have 
+  a <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+  name whose prefix is "", which will satisfy the requirements of the DTD. In 
+  other cases the prefix assigned to the element is 
+  implementation-dependent.</P></DIV></LI></UL>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>Appendix C of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml1">[XHTML 
+1.0]</A> describes a number of compatibility guidelines for users of XHTML who 
+wish to render their XHTML documents with HTML user agents. In some cases, such 
+as the guideline on the form empty elements should take, only the serialization 
+process itself has the ability to follow the guideline. In such cases, those 
+guidelines are reflected in the requirements on the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+described above.</P>
+<P>In all other cases, the guidelines can be adhered to by the instance of the 
+data model that is input to the serialization process. The guideline on the use 
+of whitespace characters in attribute values is one such example. Another 
+example is that <CODE>xml:lang="..."</CODE> does not serialize to both 
+<CODE>xml:lang="..."</CODE> and <CODE>lang="..."</CODE> as required by some 
+legacy user agents. It is the responsibility of the person or process that 
+creates the instance of the data model that is input to the serialization 
+process to ensure it is created in a way that is consistent with the guidelines. 
+No <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> results if the input instance of the data model does not adhere to the 
+guidelines.</P></DIV>
+<DIV class=div2>
+<H3><A id=XHTML_PARAMS name=XHTML_PARAMS></A>6.1 The Influence of Serialization 
+Parameters upon the XHTML Output Method</H3>
+<DIV class=div3>
+<H4><A id=XHTML_VERSION name=XHTML_VERSION></A>6.1.1 XHTML Output Method: the 
+<CODE>version</CODE> Parameter</H4>
+<P>The behavior for <CODE>version</CODE> parameter for the XHTML output method 
+is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_VERSION"><B>5.1.1 
+XML Output Method: the version Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_ENCODING name=XHTML_ENCODING></A>6.1.2 XHTML Output Method: the 
+<CODE>encoding</CODE> Parameter</H4>
+<P>The behavior for <CODE>encoding</CODE> parameter for the XHTML output method 
+is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_ENCODING"><B>5.1.2 
+XML Output Method: the encoding Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_INDENT name=XHTML_INDENT></A>6.1.3 XHTML Output Method: the 
+<CODE>indent</CODE> Parameter</H4>
+<P>If the <CODE>indent</CODE> parameter has the value <CODE>yes</CODE>, the 
+serializer <STRONG>MAY</STRONG> add or remove whitespace as it serializes the <A 
+title="result tree" 
+href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+tree</A>, so long as it does not change the way that a conforming HTML user 
+agent would render the output.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This rule can be satisfied by observing the following constraints:</P>
+<UL>
+  <LI>
+  <P>Whitespace <STRONG>MUST NOT</STRONG> be added other than before or after an 
+  element, or adjacent to an existing whitespace character.</P>
+  <LI>
+  <P>Whitespace <STRONG>MUST NOT</STRONG> be added or removed adjacent to an 
+  inline element. The inline elements are those elements in the XHTML namespace 
+  in the %inline category of any of the XHTML 1.0 DTD's, in the %inline.class 
+  category of the XHTML 1.1 DTD, and elements in the XHTML namespace with local 
+  names <CODE>ins</CODE> and <CODE>del</CODE> if they are used as inline 
+  elements (i.e., if they do not contain element children).</P>
+  <LI>
+  <P>Whitespace <STRONG>MUST NOT</STRONG> be added or removed inside a formatted 
+  element, the formatted elements being those in the XHTML namespace with local 
+  names <CODE>pre</CODE>, <CODE>script</CODE>, <CODE>style</CODE>, and 
+  <CODE>textarea</CODE>.</P></LI></UL>
+<P>The HTML definition of whitespace is different from the XML definition: see 
+section 9.1 of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+4.01 specification.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_CDATA-SECTION-ELEMENTS 
+name=XHTML_CDATA-SECTION-ELEMENTS></A>6.1.4 XHTML Output Method: the 
+<CODE>cdata-section-elements</CODE> Parameter</H4>
+<P>The behavior for <CODE>cdata-section-elements</CODE> parameter for the XHTML 
+output method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_CDATA-SECTION-ELEMENTS"><B>5.1.4 
+XML Output Method: the cdata-section-elements Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_OMIT-XML-DECLARATION name=XHTML_OMIT-XML-DECLARATION></A>6.1.5 
+XHTML Output Method: the <CODE>omit-xml-declaration</CODE> and 
+<CODE>standalone</CODE> Parameters</H4>
+<P>The behavior for <CODE>omit-xml-declaration</CODE> and 
+<CODE>standalone</CODE> parameters for the XHTML output method is described in 
+<A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_OMIT-XML-DECLARATION"><B>5.1.5 
+XML Output Method: the omit-xml-declaration and standalone 
+Parameters</B></A>.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>As with the XML output method, the XHTML output method specifies that an XML 
+declaration will be output unless it is suppressed using the 
+<CODE>omit-xml-declaration</CODE> parameter. Appendix C.1 of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml1">[XHTML 
+1.0]</A> provides advice on the consequences of including, or omitting, the XML 
+declaration.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_DOCTYPE name=XHTML_DOCTYPE></A>6.1.6 XHTML Output Method: the 
+<CODE>doctype-system</CODE> and <CODE>doctype-public</CODE> Parameters</H4>
+<P>The behavior for <CODE>doctype-system</CODE> and <CODE>doctype-public</CODE> 
+parameters for the XHTML output method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_DOCTYPE"><B>5.1.6 
+XML Output Method: the doctype-system and doctype-public 
+Parameters</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_UNDECLARE-PREFIXES name=XHTML_UNDECLARE-PREFIXES></A>6.1.7 XHTML 
+Output Method: the <CODE>undeclare-prefixes</CODE> Parameter</H4>
+<P>The behavior for <CODE>undeclare-prefixes</CODE> parameter for the XHTML 
+output method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xml-undeclare-NS"><B>5.1.7 
+XML Output Method: the undeclare-prefixes Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_NORMALIZATION-FORM name=XHTML_NORMALIZATION-FORM></A>6.1.8 XHTML 
+Output Method: the <CODE>normalization-form</CODE> Parameter</H4>
+<P>The behavior for <CODE>normalization-form</CODE> parameter for the XHTML 
+output method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_NORMALIZATION-FORM"><B>5.1.8 
+XML Output Method: the normalization-form Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_MEDIA-TYPE name=XHTML_MEDIA-TYPE></A>6.1.9 XHTML Output Method: 
+the <CODE>media-type</CODE> Parameter</H4>
+<P>The behavior for <CODE>media-type</CODE> parameter for the XHTML output 
+method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_MEDIA-TYPE"><B>5.1.9 
+XML Output Method: the media-type Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_USE-CHARACTER-MAPS name=XHTML_USE-CHARACTER-MAPS></A>6.1.10 
+XHTML Output Method: the <CODE>use-character-maps</CODE> Parameter</H4>
+<P>The behavior for <CODE>use-character-maps</CODE> parameter for the XHTML 
+output method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_USE-CHARACTER-MAPS"><B>5.1.10 
+XML Output Method: the use-character-maps Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_BYTE-ORDER-MARK name=XHTML_BYTE-ORDER-MARK></A>6.1.11 XHTML 
+Output Method: the <CODE>byte-order-mark</CODE> Parameter</H4>
+<P>The behavior for <CODE>byte-order-mark</CODE> parameter for the XHTML output 
+method is described in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#XML_BYTE-ORDER-MARK"><B>5.1.11 
+XML Output Method: the byte-order-mark Parameter</B></A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_ESCAPE-URI-ATTRIBUTES 
+name=XHTML_ESCAPE-URI-ATTRIBUTES></A>6.1.12 XHTML Output Method: the 
+<CODE>escape-uri-attributes</CODE> Parameter</H4>
+<P>If the <CODE>escape-uri-attributes</CODE> parameter has the value 
+<CODE>yes</CODE>, the XHTML output method <STRONG>MUST</STRONG> apply <A 
+title="URI Escaping" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+escaping</A> to <A title="URI attribute values" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-attribute-values">URI 
+attribute values</A>, except that relative URIs <STRONG>MUST NOT</STRONG> be 
+absolutized.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This escaping is deliberately confined to non-ASCII characters, because 
+escaping of ASCII characters is not always appropriate, for example when URIs or 
+URI fragments are interpreted locally by the HTML user agent. Even in the case 
+of non-ASCII characters, escaping can sometimes cause problems. More precise 
+control of <A title="URI Escaping" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+escaping</A> is therefore available by setting 
+<CODE>escape-uri-attributes</CODE> to <CODE>no</CODE>, and controlling the 
+escaping of URIs by using methods defined in <A 
+href="http://www.w3.org/TR/xpath-functions/#func-encode-for-uri">Section 7.4.10 
+fn:encode-for-uri</A><SUP><SMALL>FO</SMALL></SUP> and <A 
+href="http://www.w3.org/TR/xpath-functions/#func-iri-to-uri">Section 7.4.11 
+fn:iri-to-uri</A><SUP><SMALL>FO</SMALL></SUP>.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=XHTML_INCLUDE-CONTENT-TYPE name=XHTML_INCLUDE-CONTENT-TYPE></A>6.1.13 
+XHTML Output Method: the <CODE>include-content-type</CODE> Parameter</H4>
+<P>If the instance of the data model includes a <CODE>head</CODE> element in the 
+XHTML namespace, and the <CODE>include-content-type</CODE> parameter has the 
+value <CODE>yes</CODE>, the XHTML output method <STRONG>MUST</STRONG> add a 
+<CODE>meta</CODE> element as the first child element of the <CODE>head</CODE> 
+element, specifying the character encoding actually used.</P>
+<DIV class=exampleOuter>
+<P>For example,</P>
+<DIV class=exampleInner><PRE>&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" /&gt;
+...
+</PRE></DIV></DIV>
+<P>The content type <STRONG>SHOULD</STRONG> be set to the value given for the 
+<CODE>media-type</CODE> parameter.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>It is recommended that the <A title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A> use as default value for this parameter one of the MIME types (<A 
+href="REC-xslt-xquery-serialization-20070123.htm#RFC2046">[RFC2046]</A>) 
+registered for XHTML. Currently, these are <CODE>text/html</CODE> (registered by 
+<A 
+href="REC-xslt-xquery-serialization-20070123.htm#RFC2854">[RFC2854]</A>) 
+and <CODE>application/xhtml-xml</CODE> (registered by <A 
+href="REC-xslt-xquery-serialization-20070123.htm#RFC3236">[RFC3236]</A>). 
+Note that some user agents fail to recognize the charset parameter if the 
+content type is not <CODE>text/html</CODE>.</P></DIV>
+<P>If a <CODE>meta</CODE> element has been added to the <CODE>head</CODE> 
+element as described above, then any existing <CODE>meta</CODE> element child of 
+the <CODE>head</CODE> element having an <CODE>http-equiv</CODE> attribute with 
+the value "Content-Type", making the comparison without consideration of casing 
+and leading/trailing spaces, <STRONG>MUST</STRONG> be discarded.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This process removes possible parameters in the attribute value. For 
+example,</P>
+<DIV class=exampleInner><PRE>&lt;meta http-equiv="Content-Type" content="text/html;version='3.0'" /&gt;
+</PRE></DIV>
+<P>in the data model instance would be replaced by,</P>
+<DIV class=exampleInner><PRE>&lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8" /&gt;
+</PRE></DIV></DIV></DIV></DIV></DIV>
+<DIV class=div1>
+<H2><A id=html-output name=html-output></A>7 HTML Output Method</H2>
+<P>The HTML output method serializes the instance of the data model as HTML.</P>
+<DIV class=exampleOuter>
+<P>For example, the following XSL stylesheet generates html output,</P>
+<DIV class=exampleInner><PRE>&lt;xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+&lt;xsl:output method="html" version="4.0"/&gt;
+&lt;xsl:template match="/"&gt;
+  &lt;html&gt;
+    &lt;xsl:apply-templates/&gt;
+  &lt;/html&gt;
+&lt;/xsl:template&gt;
+...
+&lt;/xsl:stylesheet&gt;
+</PRE></DIV></DIV>
+<P>In the example, the <CODE>version</CODE> attribute of the 
+<CODE>xsl:output</CODE> element indicates the version of the HTML Recommendation 
+<A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+to which the serialized result is to conform.</P>
+<P>It is entirely the responsibility of the person or process that creates the 
+instance of the data model to ensure that the instance of the data model 
+conforms to the HTML Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A>. 
+It is not an error if the instance of the data model is invalid HTML. Equally, 
+it is entirely under the control of the person or process that creates the 
+instance of the data model whether the output conforms to HTML.</P>
+<DIV class=div2>
+<H3><A id=HTML_MARKUP name=HTML_MARKUP></A>7.1 Markup for Elements</H3>
+<P>The HTML output method <STRONG>MUST NOT</STRONG> output an element 
+differently from the XML output method unless the expanded QName of the element 
+has a <A title="null namespace URI" 
+href="REC-xslt-xquery-serialization-20070123.htm#null-namespace-URI">null 
+namespace URI</A>. [<A id=XML-ISLAND title="XML Island" 
+name=XML-ISLAND>Definition</A>: An element whose expanded QName has a <A 
+title="non-null namespace URI" 
+href="REC-xslt-xquery-serialization-20070123.htm#non-null-namespace-URI">non-null 
+namespace URI</A> <STRONG>MUST</STRONG> be output as XML. This is known as an 
+<B>XML Island</B>.] If the expanded QName of the element has a <A 
+title="null namespace URI" 
+href="REC-xslt-xquery-serialization-20070123.htm#null-namespace-URI">null 
+namespace URI</A>, but the local part of the expanded QName is not recognized as 
+the name of an HTML element, the element <STRONG>MUST</STRONG> be output in the 
+same way as a non-empty, inline element such as <CODE>span</CODE>. In 
+particular:</P>
+<OL class=enumar>
+  <LI>
+  <P>If the <A title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A> contains namespace <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  for namespaces other than the XML namespace, the HTML output method 
+  <STRONG>MUST</STRONG> represent these namespaces using attributes named 
+  <CODE>xmlns</CODE> or <CODE>xmlns:</CODE><EM>prefix</EM> in the same way as 
+  the XML output method would represent them when the <CODE>version</CODE> 
+  parameter is set to <CODE>1.0</CODE>.</P>
+  <LI>
+  <P>If the <A title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A> contains elements or attributes whose names have a <A 
+  title="non-null namespace URI" 
+  href="REC-xslt-xquery-serialization-20070123.htm#non-null-namespace-URI">non-null 
+  namespace URI</A>, the HTML output method <STRONG>MUST</STRONG> generate 
+  namespace-prefixed QNames for these <A title=node 
+  href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+  in the same way as the XML output method would do when the 
+  <CODE>version</CODE> parameter is set to <CODE>1.0</CODE>.</P>
+  <LI>
+  <P>Where special rules are defined later in this section for serializing 
+  specific HTML elements and attributes, these rules <STRONG>MUST NOT</STRONG> 
+  be applied to an element or attribute whose name has a <A 
+  title="non-null namespace URI" 
+  href="REC-xslt-xquery-serialization-20070123.htm#non-null-namespace-URI">non-null 
+  namespace URI</A>. However, the generic rules for the HTML output method that 
+  apply to all elements and attributes, for example the rules for escaping 
+  special characters in the text and the rules for indentation, 
+  <STRONG>MUST</STRONG> be used also for namespaced elements and attributes.</P>
+  <LI>
+  <P>When serializing an element whose name is not defined in the HTML 
+  specification, but that is in the null namespace, the HTML output method 
+  <STRONG>MUST</STRONG> apply the same rules (for example, indentation rules) as 
+  when serializing a <CODE>span</CODE> element. The descendants of such an 
+  element <STRONG>MUST</STRONG> be serialized as if they were descendants of a 
+  <CODE>span</CODE> element.</P>
+  <LI>
+  <P>When serializing an element whose name is in a non-null namespace, the HTML 
+  output method <STRONG>MUST</STRONG> apply the same rules (for example, 
+  indentation rules) as when serializing a <CODE>div</CODE> element. The 
+  descendants of such an element <STRONG>MUST</STRONG> be serialized as if they 
+  were descendants of a <CODE>div</CODE> element.</P></LI></OL>
+<P>The HTML output method <STRONG>MUST NOT</STRONG> output an end-tag for empty 
+elements. For HTML 4.0, the empty elements are <CODE>area</CODE>, 
+<CODE>base</CODE>, <CODE>basefont</CODE>, <CODE>br</CODE>, <CODE>col</CODE>, 
+<CODE>frame</CODE>, <CODE>hr</CODE>, <CODE>img</CODE>, <CODE>input</CODE>, 
+<CODE>isindex</CODE>, <CODE>link</CODE>, <CODE>meta</CODE> and 
+<CODE>param</CODE>. For example, an element written as <CODE>&lt;br/&gt;</CODE> 
+or <CODE>&lt;br&gt;&lt;/br&gt;</CODE> in an XSLT stylesheet 
+<STRONG>MUST</STRONG> be output as <CODE>&lt;br&gt;</CODE>.</P>
+<P>The HTML output method <STRONG>MUST</STRONG> recognize the names of HTML 
+elements regardless of case. For example, elements named <CODE>br</CODE>, 
+<CODE>BR</CODE> or <CODE>Br</CODE> <STRONG>MUST</STRONG> all be recognized as 
+the HTML <CODE>br</CODE> element and output without an end-tag.</P>
+<P>The HTML output method <STRONG>MUST NOT</STRONG> perform escaping for the 
+content of the <CODE>script</CODE> and <CODE>style</CODE> elements.</P>
+<DIV class=exampleOuter>
+<P>For example, a <CODE>script</CODE> element created by an XQuery direct 
+element constructor or an XSLT literal result element, such as:</P>
+<DIV class=exampleInner><PRE>&lt;script&gt;if (a &amp;lt; b) foo()&lt;/script&gt;
+</PRE></DIV>
+<P>or</P>
+<DIV class=exampleInner><PRE>&lt;script&gt;&lt;![CDATA[if (a &lt; b) foo()]]&gt;&lt;/script&gt;
+</PRE></DIV>
+<P><STRONG>MUST</STRONG> be output as</P>
+<DIV class=exampleInner><PRE>&lt;script&gt;if (a &lt; b) foo()&lt;/script&gt;
+</PRE></DIV></DIV>
+<DIV class=exampleOuter>
+<P>A common requirement is to output a <CODE>script</CODE> element as shown in 
+the example below:</P>
+<DIV class=exampleInner><PRE>&lt;script type="application/ecmascript"&gt;
+      document.write ("&lt;em&gt;This won't work&lt;/em&gt;")
+&lt;/script&gt;
+</PRE></DIV>
+<P>This is illegal HTML, for the reasons explained in section B.3.2 of the <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+4.01 specification. Nevertheless, it is possible to output this fragment, using 
+either of the following constructs:</P>
+<P>Firstly, by use of a <CODE>script</CODE> element created by an XQuery direct 
+element constructor or an XSLT literal result element:</P>
+<DIV class=exampleInner><PRE>&lt;script type="application/ecmascript"&gt;
+      document.write ("&lt;em&gt;This won't work&lt;/em&gt;")
+&lt;/script&gt;
+</PRE></DIV>
+<P>Secondly, by constructing the markup from ordinary text characters:</P>
+<DIV class=exampleInner><PRE>&lt;script type="application/ecmascript"&gt;
+      document.write ("&amp;lt;em&amp;gt;This won't work&amp;lt;/em&amp;gt;")
+&lt;/script&gt;
+</PRE></DIV>
+<P>As the <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+specification points out, the correct way to write this is to use the escape 
+conventions for the specific scripting language. For JavaScript, it can be 
+written as:</P>
+<DIV class=exampleInner><PRE>&lt;script type="application/ecmascript"&gt;
+      document.write ("&amp;lt;em&amp;gt;This will work&amp;lt;\/em&amp;gt;")
+&lt;/script&gt;
+</PRE></DIV>
+<P>The <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+4.01 specification also shows examples of how to write this in various other 
+scripting languages. The escaping <STRONG>MUST</STRONG> be done manually; it 
+will not be done by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>.</P></DIV></DIV>
+<DIV class=div2>
+<H3><A id=HTML_ATTRIBS name=HTML_ATTRIBS></A>7.2 Writing Attributes</H3>
+<P>The HTML output method <STRONG>MUST NOT</STRONG> escape "<CODE>&lt;</CODE>" 
+characters occurring in attribute values.</P>
+<P>The HTML output method <STRONG>MUST</STRONG> output boolean attributes (that 
+is attributes with only a single allowed value that is equal to the name of the 
+attribute) in minimized form.</P>
+<DIV class=exampleOuter>
+<P>For example, a start-tag created using the following XQuery direct element 
+constructor or XSLT literal result element</P>
+<DIV class=exampleInner><PRE>&lt;OPTION selected="selected"&gt;
+</PRE></DIV>
+<P><STRONG>MUST</STRONG> be output as</P>
+<DIV class=exampleInner><PRE>&lt;OPTION selected&gt;
+</PRE></DIV></DIV>
+<P>The HTML output method <STRONG>MUST NOT</STRONG> escape a <CODE>&amp;</CODE> 
+character occurring in an attribute value immediately followed by a 
+<CODE>{</CODE> character (see <A 
+href="http://www.w3.org/TR/REC-html40/appendix/notes.html#h-B.7.1.1">Section 
+B.7.1</A> of the HTML Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A>).</P>
+<DIV class=exampleOuter>
+<P>For example, a start-tag created using the following XQuery direct element 
+constructor or XSLT literal result element</P>
+<DIV class=exampleInner><PRE>&lt;BODY bgcolor='&amp;amp;{{randomrbg}};'&gt;
+</PRE></DIV>
+<P><STRONG>MUST</STRONG> be output as</P>
+<DIV class=exampleInner><PRE>&lt;BODY bgcolor='&amp;{randomrbg};'&gt;
+</PRE></DIV></DIV>
+<P>See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_PARAMS"><B>7.4 
+The Influence of Serialization Parameters upon the HTML Output Method</B></A> 
+for additional directives on how attributes may be written.</P></DIV>
+<DIV class=div2>
+<H3><A id=HTML_CHARDATA name=HTML_CHARDATA></A>7.3 Writing Character Data</H3>
+<P>The HTML output method <STRONG>MAY</STRONG> output a character using a 
+character entity reference in preference to using a numeric character reference, 
+if an entity is defined for the character in the version of HTML that the output 
+method is using. Entity references and character references 
+<STRONG>SHOULD</STRONG> be used only where the character is not present in the 
+selected encoding, or where the visual representation of the character is 
+unclear (as with <CODE>&amp;nbsp;</CODE>, for example).</P>
+<P>When outputting a sequence of whitespace characters in the instance of the 
+data model, within an element where whitespace is treated normally (but not in 
+elements such as <CODE>pre</CODE> and <CODE>textarea</CODE>), the HTML output 
+method <STRONG>MAY</STRONG> represent it using any sequence of whitespace that 
+will be treated in the same way by an HTML user agent. See section 3.5 of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xhtml-modularization">[XHTML 
+Modularization]</A> for some additional information on handling of whitespace by 
+an HTML user agent.</P>
+<P>Certain characters, specifically the control characters #x7F-#x9F, are legal 
+in XML but not in HTML. It is a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0014 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0014">err:SERE0014</A>] 
+to use the HTML output method when such characters appear in the instance of the 
+data model. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<P>The HTML output method <STRONG>MUST</STRONG> terminate processing 
+instructions with <CODE>&gt;</CODE> rather than <CODE>?&gt;</CODE>. It is a <A 
+title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0015 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0015">err:SERE0015</A>] 
+to use the HTML output method when <CODE>&gt;</CODE> appears within a processing 
+instruction in the data model instance being serialized.</P></DIV>
+<DIV class=div2>
+<H3><A id=HTML_PARAMS name=HTML_PARAMS></A>7.4 The Influence of Serialization 
+Parameters upon the HTML Output Method</H3>
+<DIV class=div3>
+<H4><A id=HTML_VERSION name=HTML_VERSION></A>7.4.1 HTML Output Method: the 
+<CODE>version</CODE> Parameter</H4>
+<P>The <CODE>version</CODE> attribute indicates the version of the HTML 
+Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+to which the serialized result is to conform. If the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+does not support the version of HTML specified by this parameter, it 
+<STRONG>MUST</STRONG> signal a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0013 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0013">err:SESU0013</A>].</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_ENCODING name=HTML_ENCODING></A>7.4.2 HTML Output Method: the 
+<CODE>encoding</CODE> Parameter</H4>
+<P>The <CODE>encoding</CODE> parameter specifies the encoding to be used. <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">Serializers</A> 
+are <STRONG>REQUIRED</STRONG> to support values of <CODE>UTF-8</CODE> and 
+<CODE>UTF-16</CODE>. A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0007 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0007">err:SESU0007</A>] 
+occurs if an output encoding other than <CODE>UTF-8</CODE> or 
+<CODE>UTF-16</CODE> is requested and the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+does not support that encoding. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P>
+<P>It is possible that the instance of the data model will contain a character 
+that cannot be represented in the encoding that the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is using for output. In this case, if the character occurs in a context where 
+HTML recognizes character references, then the character <STRONG>MUST</STRONG> 
+be output as a character entity reference or decimal numeric character 
+reference; otherwise (for example, in a <CODE>script</CODE> or 
+<CODE>style</CODE> element or in a comment), the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0008 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0008">err:SERE0008</A>].</P>
+<P>See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_INCLUDE-CONTENT-TYPE"><B>7.4.13 
+HTML Output Method: the include-content-type Parameter</B></A> regarding how 
+this parameter is used with the <CODE>include-content-type</CODE> 
+parameter.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_INDENT name=HTML_INDENT></A>7.4.3 HTML Output Method: the 
+<CODE>indent</CODE> Parameter</H4>
+<P>If the <CODE>indent</CODE> parameter has the value <CODE>yes</CODE>, then the 
+HTML output method <STRONG>MAY</STRONG> add or remove whitespace as it 
+serializes the <A title="result tree" 
+href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+tree</A>, so long as it does not change the way that a conforming HTML user 
+agent would render the output.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This rule can be satisfied by observing the following constraints:</P>
+<P>Whitespace <STRONG>MUST NOT</STRONG> be added other than before or after an 
+element, or adjacent to an existing whitespace character.</P>
+<P>Whitespace <STRONG>MUST NOT</STRONG> be added or removed adjacent to an 
+inline element. The inline elements are those included in the 
+<CODE>%inline</CODE> category of any of the HTML 4.01 DTD's, as well as the 
+<CODE>ins</CODE> and <CODE>del</CODE> elements if they are used as inline 
+elements (i.e., if they do not contain element children).</P>
+<P>Whitespace <STRONG>MUST NOT</STRONG> be added or removed inside a formatted 
+element, the formatted elements being <CODE>pre</CODE>, <CODE>script</CODE>, 
+<CODE>style</CODE>, and <CODE>textarea</CODE>.</P>
+<P>Note that the HTML definition of whitespace is different from the XML 
+definition (see section 9.1 of the <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+specification).</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=HTML_CDATA-SECTION-ELEMENTS name=HTML_CDATA-SECTION-ELEMENTS></A>7.4.4 
+HTML Output Method: the <CODE>cdata-section-elements</CODE> Parameter</H4>
+<P>The <CODE>cdata-section-elements</CODE> parameter is not applicable to the 
+HTML output method, except in the case of <A title="XML Island" 
+href="REC-xslt-xquery-serialization-20070123.htm#XML-ISLAND">XML 
+Islands</A>.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_OMIT-XML-DECLARATION name=HTML_OMIT-XML-DECLARATION></A>7.4.5 
+HTML Output Method: the <CODE>omit-xml-declaration</CODE> and 
+<CODE>standalone</CODE> Parameters</H4>
+<P>The <CODE>omit-xml-declaration</CODE> and <CODE>standalone</CODE> parameters 
+are not applicable to the HTML output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_DOCTYPE name=HTML_DOCTYPE></A>7.4.6 HTML Output Method: the 
+<CODE>doctype-system</CODE> and <CODE>doctype-public</CODE> Parameters</H4>
+<P>If the <CODE>doctype-public</CODE> or <CODE>doctype-system</CODE> parameters 
+are specified, then the HTML output method <STRONG>MUST</STRONG> output a 
+document type declaration immediately before the first element. The name 
+following <CODE>&lt;!DOCTYPE</CODE> <STRONG>MUST</STRONG> be <CODE>HTML</CODE> 
+or <CODE>html</CODE>. If the <CODE>doctype-public</CODE> parameter is specified, 
+then the output method <STRONG>MUST</STRONG> output <CODE>PUBLIC</CODE> followed 
+by the specified public identifier; if the <CODE>doctype-system</CODE> parameter 
+is also specified, it <STRONG>MUST</STRONG> also output the specified system 
+identifier following the public identifier. If the <CODE>doctype-system</CODE> 
+parameter is specified but the <CODE>doctype-public</CODE> parameter is not 
+specified, then the output method <STRONG>MUST</STRONG> output 
+<CODE>SYSTEM</CODE> followed by the specified system identifier.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_UNDECLARE-PREFIXES name=HTML_UNDECLARE-PREFIXES></A>7.4.7 HTML 
+Output Method: the <CODE>undeclare-prefixes</CODE> Parameter</H4>
+<P>The <CODE>undeclare-prefixes</CODE> parameter is not applicable to the HTML 
+output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_NORMALIZATION-FORM name=HTML_NORMALIZATION-FORM></A>7.4.8 HTML 
+Output Method: the <CODE>normalization-form</CODE> Parameter</H4>
+<P>The <CODE>normalization-form</CODE> parameter is applicable to the HTML 
+output method. The values <CODE>NFC</CODE> and <CODE>none</CODE> 
+<STRONG>MUST</STRONG> be supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>. 
+A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0011 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0011">err:SESU0011</A>] 
+results if the value of the <CODE>normalization-form</CODE> parameter specifies 
+a normalization form that is not supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>; 
+the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_MEDIA-TYPE name=HTML_MEDIA-TYPE></A>7.4.9 HTML Output Method: the 
+<CODE>media-type</CODE> Parameter</H4>
+<P>The <CODE>media-type</CODE> parameter is applicable to the HTML output 
+method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A> for more information. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#HTML_INCLUDE-CONTENT-TYPE"><B>7.4.13 
+HTML Output Method: the include-content-type Parameter</B></A> regarding how 
+this parameter is used with the <CODE>include-content-type</CODE> 
+parameter.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_USE-CHARACTER-MAPS name=HTML_USE-CHARACTER-MAPS></A>7.4.10 HTML 
+Output Method: the <CODE>use-character-maps</CODE> Parameter</H4>
+<P>The <CODE>use-character-maps</CODE> parameter is applicable to the HTML 
+output method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#character-maps"><B>9 
+Character Maps</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_BYTE-ORDER-MARK name=HTML_BYTE-ORDER-MARK></A>7.4.11 HTML Output 
+Method: the <CODE>byte-order-mark</CODE> Parameter</H4>
+<P>The <CODE>byte-order-mark</CODE> parameter is applicable to the HTML output 
+method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=HTML_ESCAPE-URI-ATTRIBUTES name=HTML_ESCAPE-URI-ATTRIBUTES></A>7.4.12 
+HTML Output Method: the <CODE>escape-uri-attributes</CODE> Parameter</H4>
+<P>If the <CODE>escape-uri-attributes</CODE> parameter has the value 
+<CODE>yes</CODE>, the HTML output method <STRONG>MUST</STRONG> apply <A 
+title="URI Escaping" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+escaping</A> to <A title="URI attribute values" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-attribute-values">URI 
+attribute values</A>, except that relative URIs <STRONG>MUST NOT</STRONG> be 
+absolutized.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This escaping is deliberately confined to non-ASCII characters, because 
+escaping of ASCII characters is not always appropriate, for example when URIs or 
+URI fragments are interpreted locally by the HTML user agent. Even in the case 
+of non-ASCII characters, escaping can sometimes cause problems. More precise 
+control of <A title="URI Escaping" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+escaping</A> is therefore available by setting 
+<CODE>escape-uri-attributes</CODE> to <CODE>no</CODE>, and controlling the 
+escaping of URIs by using methods defined in <A 
+href="http://www.w3.org/TR/xpath-functions/#func-encode-for-uri">Section 7.4.10 
+fn:encode-for-uri</A><SUP><SMALL>FO</SMALL></SUP> and <A 
+href="http://www.w3.org/TR/xpath-functions/#func-iri-to-uri">Section 7.4.11 
+fn:iri-to-uri</A><SUP><SMALL>FO</SMALL></SUP>.</P></DIV></DIV>
+<DIV class=div3>
+<H4><A id=HTML_INCLUDE-CONTENT-TYPE name=HTML_INCLUDE-CONTENT-TYPE></A>7.4.13 
+HTML Output Method: the <CODE>include-content-type</CODE> Parameter</H4>
+<P>If there is a <CODE>head</CODE> element, and the 
+<CODE>include-content-type</CODE> parameter has the value <CODE>yes</CODE>, the 
+HTML output method <STRONG>MUST</STRONG> add a <CODE>meta</CODE> element as the 
+first child element of the <CODE>head</CODE> element specifying the character 
+encoding actually used.</P>
+<DIV class=exampleOuter>
+<P>For example,</P>
+<DIV class=exampleInner><PRE>&lt;HEAD&gt;
+&lt;META http-equiv="Content-Type" content="text/html; charset=EUC-JP"&gt;
+...
+</PRE></DIV></DIV>
+<P>The content type <STRONG>MUST</STRONG> be set to the value given for the 
+<CODE>media-type</CODE> parameter.</P>
+<P>If a <CODE>meta</CODE> element has been added to the <CODE>head</CODE> 
+element as described above, then any existing <CODE>meta</CODE> element child of 
+the <CODE>head</CODE> element having an <CODE>http-equiv</CODE> attribute with 
+the value "Content-Type" <STRONG>MUST</STRONG> be discarded.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>This process removes possible parameters in the attribute value. For 
+example,</P>
+<DIV class=exampleInner><PRE>&lt;meta http-equiv="Content-Type" content="text/html;version='3.0'"/&gt;
+</PRE></DIV>
+<P>in the data model instance would be replaced by,</P>
+<DIV class=exampleInner><PRE>&lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8"/&gt;
+</PRE></DIV></DIV></DIV></DIV></DIV>
+<DIV class=div1>
+<H2><A id=text-output name=text-output></A>8 Text Output Method</H2>
+<P>The Text output method serializes the instance of the data model by 
+outputting the <A title="string value" 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-string-value">string 
+value</A> of the document <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+created by <A title="sequence normalization" 
+href="REC-xslt-xquery-serialization-20070123.htm#sequence-normalization">sequence 
+normalization</A>, without any escaping.</P>
+<P>A newline character in the instance of the data model <STRONG>MAY</STRONG> be 
+output using any character sequence that is conventionally used to represent a 
+line ending in the chosen system environment.</P>
+<DIV class=div2>
+<H3><A id=TEXT_PARAMS name=TEXT_PARAMS></A>8.1 The Influence of Serialization 
+Parameters upon the Text Output Method</H3>
+<DIV class=div3>
+<H4><A id=TEXT_VERSION name=TEXT_VERSION></A>8.1.1 Text Output Method: the 
+<CODE>version</CODE> Parameter</H4>
+<P>The <CODE>version</CODE> parameter is not applicable to the Text output 
+method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_ENCODING name=TEXT_ENCODING></A>8.1.2 Text Output Method: the 
+<CODE>encoding</CODE> Parameter</H4>
+<P>The <CODE>encoding</CODE> parameter identifies the encoding that the Text 
+output method <STRONG>MUST</STRONG> use to convert sequences of characters to 
+sequences of bytes. <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">Serializers</A> 
+are <STRONG>REQUIRED</STRONG> to support values of <CODE>UTF-8</CODE> and 
+<CODE>UTF-16</CODE>. A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0007 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0007">err:SESU0007</A>] 
+occurs if the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+does not support the encoding specified by the <CODE>encoding</CODE> parameter. 
+The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error. If the instance of the data model 
+contains a character that cannot be represented in the encoding that the <A 
+title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is using for output, the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal a <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0008 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0008">err:SERE0008</A>].</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_INDENT name=TEXT_INDENT></A>8.1.3 Text Output Method: the 
+<CODE>indent</CODE> Parameter</H4>
+<P>The <CODE>indent</CODE> parameter is not applicable to the Text output 
+method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_CDATA-SECTION-ELEMENTS name=TEXT_CDATA-SECTION-ELEMENTS></A>8.1.4 
+Text Output Method: the <CODE>cdata-section-elements</CODE> Parameter</H4>
+<P>The <CODE>cdata-section-elements</CODE> parameter is not applicable to the 
+Text output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_OMIT-XML-DECLARATION name=TEXT_OMIT-XML-DECLARATION></A>8.1.5 
+Text Output Method: the <CODE>omit-xml-declaration</CODE> and 
+<CODE>standalone</CODE> Parameters</H4>
+<P>The <CODE>omit-xml-declaration</CODE> and <CODE>standalone</CODE> parameters 
+are not applicable to the Text output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_DOCTYPE name=TEXT_DOCTYPE></A>8.1.6 Text Output Method: the 
+<CODE>doctype-system</CODE> and <CODE>doctype-public</CODE> Parameters</H4>
+<P>The <CODE>doctype-system</CODE> and <CODE>doctype-public</CODE> parameters 
+are not applicable to the Text output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_UNDECLARE-PREFIXES name=TEXT_UNDECLARE-PREFIXES></A>8.1.7 Text 
+Output Method: the <CODE>undeclare-prefixes</CODE> Parameter</H4>
+<P>The <CODE>undeclare-prefixes</CODE> parameter is not applicable to the Text 
+output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_NORMALIZATION-FORM name=TEXT_NORMALIZATION-FORM></A>8.1.8 Text 
+Output Method: the <CODE>normalization-form</CODE> Parameter</H4>
+<P>The <CODE>normalization-form</CODE> parameter is applicable to the Text 
+output method. The values <CODE>NFC</CODE> and <CODE>none</CODE> 
+<STRONG>MUST</STRONG> be supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>. 
+A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SESU0011 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSESU0011">err:SESU0011</A>] 
+results if the value of the <CODE>normalization-form</CODE> parameter specifies 
+a normalization form that is not supported by the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>; 
+the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_MEDIA-TYPE name=TEXT_MEDIA-TYPE></A>8.1.9 Text Output Method: the 
+<CODE>media-type</CODE> Parameter</H4>
+<P>The <CODE>media-type</CODE> parameter is applicable to the Text output 
+method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_USE-CHARACTER-MAPS name=TEXT_USE-CHARACTER-MAPS></A>8.1.10 Text 
+Output Method: the <CODE>use-character-maps</CODE> Parameter</H4>
+<P>The <CODE>use-character-maps</CODE> parameter is applicable to the Text 
+output method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#character-maps"><B>9 
+Character Maps</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_BYTE-ORDER-MARK name=TEXT_BYTE-ORDER-MARK></A>8.1.11 Text Output 
+Method: the <CODE>byte-order-mark</CODE> Parameter</H4>
+<P>The <CODE>byte-order-mark</CODE> parameter is applicable to the Text output 
+method. See <A 
+href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+Serialization Parameters</B></A> for more information.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_ESCAPE-URI-ATTRIBUTES name=TEXT_ESCAPE-URI-ATTRIBUTES></A>8.1.12 
+Text Output Method: the <CODE>escape-uri-attributes</CODE> Parameter</H4>
+<P>The <CODE>escape-uri-attributes</CODE> parameter is not applicable to the 
+Text output method.</P></DIV>
+<DIV class=div3>
+<H4><A id=TEXT_INCLUDE-CONTENT-TYPE name=TEXT_INCLUDE-CONTENT-TYPE></A>8.1.13 
+Text Output Method: the <CODE>include-content-type</CODE> Parameter</H4>
+<P>The <CODE>include-content-type</CODE> parameter is not applicable to the Text 
+output method.</P></DIV></DIV></DIV>
+<DIV class=div1>
+<H2><A id=character-maps name=character-maps></A>9 Character Maps</H2>
+<P>The <CODE>use-character-maps</CODE> parameter is a list of characters and 
+corresponding string substitutions.</P>
+<P>Character maps allow a specific character appearing in a text or attribute <A 
+title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+in the instance of the data model to be replaced with a specified string of 
+characters during serialization. The string that is substituted is output "as 
+is," and the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+performs no checks that the resulting document is well-formed. This mechanism 
+can therefore be used to introduce arbitrary markup in the serialized output. 
+See <A href="http://www.w3.org/TR/xslt20/#character-maps">Section 20.1 Character 
+Maps</A><SUP><SMALL>XT</SMALL></SUP> of <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xslt20">[XSL 
+Transformations (XSLT) Version 2.0]</A> for examples of using character mapping 
+in XSLT.</P>
+<P>Character mapping is applied to the characters that actually appear in a text 
+or attribute <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">node</A> 
+in the instance of the data model, before any other serialization operations 
+such as escaping or <A title="Unicode Normalization" 
+href="REC-xslt-xquery-serialization-20070123.htm#unicode-normalization">Unicode 
+Normalization</A> are applied. If a character is mapped, then it is not 
+subjected to XML or HTML escaping, nor to Unicode Normalization. The string that 
+is substituted for a character is not validated or processed in any way by the 
+<A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>, 
+except for translation into the target encoding. In particular, it is not 
+subjected to XML or HTML escaping, it is not subjected to Unicode Normalization, 
+and it is not subjected to further character mapping.</P>
+<P>Character mapping is not applied to characters in text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+whose parent elements are listed in the <CODE>cdata-section-elements</CODE> 
+parameter, nor to characters for which output escaping has been disabled 
+(disabling output escaping is an <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xslt20">[XSL 
+Transformations (XSLT) Version 2.0]</A> feature), nor to characters in attribute 
+values that are subject to <A title="URI Escaping" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+escaping</A> defined for the HTML and XHTML output methods, unless <A 
+title="URI Escaping" 
+href="REC-xslt-xquery-serialization-20070123.htm#uri-escaping">URI 
+escaping</A> has been disabled using the <CODE>escape-uri-attributes</CODE> 
+parameter in the output definition.</P>
+<P>On serialization, occurrences of a character specified in the 
+<CODE>use-character-maps</CODE> in text <A title=node 
+href="REC-xslt-xquery-serialization-20070123.htm#dt-node">nodes</A> 
+and attribute values are replaced by the corresponding string from the 
+<CODE>use-character-maps</CODE> parameter.</P>
+<DIV class=note>
+<P class=prefix><B>Note:</B></P>
+<P>Using a character map can result in non-well-formed documents if the string 
+contains XML-significant characters. For example, it is possible to create 
+documents containing unmatched start and end tags, references to entities that 
+are not declared, or attributes that contain tags or unescaped quotation 
+marks.</P></DIV>
+<P>If a character is mapped, then it is not subjected to XML or HTML 
+escaping.</P>
+<P>A <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+error</A> [<A title=err:SERE0008 
+href="REC-xslt-xquery-serialization-20070123.htm#ERRSERE0008">err:SERE0008</A>] 
+occurs if character mapping causes the output of a string containing a character 
+that cannot be represented in the encoding that the <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+is using for output. The <A title=serializer 
+href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+<STRONG>MUST</STRONG> signal the error.</P></DIV>
+<DIV class=div1>
+<H2><A id=conformance name=conformance></A>10 Conformance</H2>
+<P>[<A id=host-language title="host language" name=host-language>Definition</A>: 
+Serialization is intended primarily as a component of a <B>host language</B> 
+such as <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xslt20">[XSL 
+Transformations (XSLT) Version 2.0]</A> or <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xquery">[XQuery 
+1.0: An XML Query Language]</A>.] Therefore, this document relies on 
+specifications that use it to specify conformance criteria for Serialization in 
+their respective environments. Specifications that set conformance criteria for 
+their use of Serialization <STRONG>MUST NOT</STRONG> change the semantic 
+definitions of Serialization as given in this specification, except by 
+subsetting and/or compatible extensions. It is the responsibility of the <A 
+title="host language" 
+href="REC-xslt-xquery-serialization-20070123.htm#host-language">host 
+language</A> to specify how <A title="serialization error" 
+href="REC-xslt-xquery-serialization-20070123.htm#serial-err">serialization 
+errors</A> should be handled.</P>
+<P>Certain facilities in this specification are described as producing <A 
+title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+results. A claim that asserts conformance with this specification 
+<STRONG>MUST</STRONG> be accompanied by documentation stating the effect of each 
+implementation-defined feature. For convenience, a non-normative checklist of 
+implementation-defined features is provided at <A 
+href="REC-xslt-xquery-serialization-20070123.htm#implementation-defined-features"><B>D 
+Checklist of Implementation-Defined Features</B></A>.</P></DIV></DIV>
+<DIV class=back>
+<DIV class=div1>
+<H2><A id=references name=references></A>A References</H2>
+<DIV class=div2>
+<H3><A id=normative-references name=normative-references></A>A.1 Normative 
+References</H3>
+<DL>
+  <DT class=label><SPAN><A id=charmod-norm name=charmod-norm></A>Character Model 
+  for the World Wide Web 1.0: Normalization</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/charmod-norm/"><CITE>Character Model for 
+  the World Wide Web 1.0: Normalization</CITE></A>, Misha Wolf, Tex Texin, 
+  Addison Phillips, <EM>et. al.</EM>, Editors. World Wide Web Consortium, 
+  27&nbsp;Oct&nbsp;2005. This version is 
+  http://www.w3.org/TR/2005/WD-charmod-norm-20051027/. The <A 
+  href="http://www.w3.org/TR/charmod-norm/">latest version</A> is available at 
+  http://www.w3.org/TR/charmod-norm/.</DIV>
+  <DT class=label><SPAN><A id=xpath-datamodel name=xpath-datamodel></A>XQuery 
+  1.0 and XPath 2.0 Data Model</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xpath-datamodel/"><CITE>XQuery 1.0 and 
+  XPath 2.0 Data Model (XDM)</CITE></A>, Norman Walsh, Mary Fernández, Ashok 
+  Malhotra, <EM>et. al.</EM>, Editors. World Wide Web Consortium, 23 Jan 2007. 
+  This version is REC-xpath-datamodel-20070123.htm. The 
+  <A href="http://www.w3.org/TR/xpath-datamodel/">latest version</A> is 
+  available at http://www.w3.org/TR/xpath-datamodel/.</DIV>
+  <DT class=label><SPAN><A id=xpath-functions name=xpath-functions></A>XQuery 
+  1.0 and XPath 2.0 Functions and Operators</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xpath-functions/"><CITE>XQuery 1.0 and 
+  XPath 2.0 Functions and Operators</CITE></A>, Ashok Malhotra, Jim Melton, and 
+  Norman Walsh, Editors. World Wide Web Consortium, 23 Jan 2007. This version is 
+  REC-xpath-functions-20070123.htm. The <A 
+  href="http://www.w3.org/TR/xpath-functions/">latest version</A> is available 
+  at http://www.w3.org/TR/xpath-functions/.</DIV>
+  <DT class=label><SPAN><A id=html401 name=html401></A>HTML</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/html401"><CITE>HTML 4.01 
+  Specification</CITE></A>, Ian Jacobs, Arnaud Le Hors, and David Raggett, 
+  Editors. World Wide Web Consortium, 24&nbsp;Dec&nbsp;1999. This version is 
+  http://www.w3.org/TR/1999/REC-html401-19991224. The <A 
+  href="http://www.w3.org/TR/html401">latest version</A> is available at 
+  http://www.w3.org/TR/html401.</DIV>
+  <DT class=label><SPAN><A id=IANA name=IANA></A>IANA</SPAN> 
+  <DD>
+  <DIV><A href="http://www.iana.org/assignments/character-sets"><CITE>Character 
+  Sets</CITE></A>. Internet Assigned Numbers Authority. Jan 2005.</DIV>
+  <DT class=label><SPAN><A id=RFC2046 name=RFC2046></A>RFC2046</SPAN> 
+  <DD>
+  <DIV><A href="http://www.ietf.org/rfc/rfc2046.txt"><CITE>Multipurpose Internet 
+  Mail Extensions (MIME) Part Two: Media Types</CITE></A>, N. Freed, N. 
+  Borenstein. Network Working Group, IETF, Nov 1996.</DIV>
+  <DT class=label><SPAN><A id=RFC2119 name=RFC2119></A>RFC2119</SPAN> 
+  <DD>
+  <DIV><A href="http://www.ietf.org/rfc/rfc2119.txt"><CITE>Key words for use in 
+  RFCs to Indicate Requirement Levels</CITE></A>, S. Bradner. Network Working 
+  Group, IETF, Mar 1997.</DIV>
+  <DT class=label><SPAN><A id=RFC2278 name=RFC2278></A>RFC2278</SPAN> 
+  <DD>
+  <DIV><A href="http://www.ietf.org/rfc/rfc2278.txt"><CITE>IANA Charset 
+  Registration Procedures</CITE></A>, N. Freed and J. Postel Network Working 
+  Group, IETF, Jan 1998.</DIV>
+  <DT class=label><SPAN><A id=RFC2854 name=RFC2854></A>RFC2854</SPAN> 
+  <DD>
+  <DIV><A href="http://www.ietf.org/rfc/rfc2854.txt"><CITE>The 'text/html' Media 
+  Type</CITE></A>, D. Connolly, L. Masinter. Network Working Group, IETF, Jun 
+  2000.</DIV>
+  <DT class=label><SPAN><A id=RFC3236 name=RFC3236></A>RFC3236</SPAN> 
+  <DD>
+  <DIV><A href="http://www.ietf.org/rfc/rfc3236.txt"><CITE>The 
+  'application/xhtml+xml' Media Type</CITE></A>, M. Baker and P. Stark. Network 
+  Working Group, IETF, Jan 2002.</DIV>
+  <DT class=label><SPAN><A id=UNICODE-ENCODING name=UNICODE-ENCODING></A>Unicode 
+  Encoding</SPAN> 
+  <DD>
+  <DIV><A href="http://www.unicode.org/unicode/reports/tr17/"><CITE>Unicode 
+  Character Encoding Model</CITE></A>, Unicode Consortium. Unicode Standard 
+  Annex #17.</DIV>
+  <DT class=label><SPAN><A id=UNICODE-NORMALIZATION-FORM 
+  name=UNICODE-NORMALIZATION-FORM></A>UAX #15: Unicode Normalization 
+  Forms</SPAN> 
+  <DD>
+  <DIV><A href="http://www.unicode.org/unicode/reports/tr15/"><CITE>Unicode 
+  Normalization Forms</CITE></A>, Unicode Consortium. Unicode Standard Annex 
+  #15.</DIV>
+  <DT class=label><SPAN><A id=xhtml1 name=xhtml1></A>XHTML 1.0</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xhtml1"><CITE>XHTML™ 1.0 The Extensible 
+  HyperText Markup Language (Second Edition)</CITE></A>, Steven Pemberton, 
+  Editor. World Wide Web Consortium, 01&nbsp;Aug&nbsp;2002. This version is 
+  http://www.w3.org/TR/2002/REC-xhtml1-20020801. The <A 
+  href="http://www.w3.org/TR/xhtml1">latest version</A> is available at 
+  http://www.w3.org/TR/xhtml1.</DIV>
+  <DT class=label><SPAN><A id=xhtml11 name=xhtml11></A>XHTML 1.1</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xhtml11/"><CITE>XHTML™ 1.1 - Module-based 
+  XHTML</CITE></A>, Murray Altheim and Shane McCarron, Editors. World Wide Web 
+  Consortium, 31&nbsp;May&nbsp;2001. This version is 
+  http://www.w3.org/TR/2001/REC-xhtml11-20010531. The <A 
+  href="http://www.w3.org/TR/xhtml11/">latest version</A> is available at 
+  http://www.w3.org/TR/xhtml11/.</DIV>
+  <DT class=label><SPAN><A id=REC-xml name=REC-xml></A>XML10</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xml"><CITE>Extensible Markup Language (XML) 
+  1.0 (Fourth Edition)</CITE></A>, Eve Maler, Jean Paoli, François Yergeau, 
+  <EM>et. al.</EM>, Editors. World Wide Web Consortium, 16&nbsp;Aug&nbsp;2006. 
+  This version is http://www.w3.org/TR/2006/REC-xml-20060816. The <A 
+  href="http://www.w3.org/TR/xml">latest version</A> is available at 
+  http://www.w3.org/TR/xml.</DIV>
+  <DT class=label><SPAN><A id=xml11 name=xml11></A>XML11</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xml11/"><CITE>Extensible Markup Language 
+  (XML) 1.1 (Second Edition)</CITE></A>, Tim Bray, John Cowan, Jean Paoli, 
+  <EM>et. al.</EM>, Editors. World Wide Web Consortium, 16&nbsp;Aug&nbsp;2006. 
+  This version is http://www.w3.org/TR/2006/REC-xml11-20060816. The <A 
+  href="http://www.w3.org/TR/xml11/">latest version</A> is available at 
+  http://www.w3.org/TR/xml11/.</DIV>
+  <DT class=label><SPAN><A id=REC-xml-names name=REC-xml-names></A>XML 
+  Names</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/REC-xml-names"><CITE>Namespaces in 
+  XML</CITE></A>, Andrew Layman, Dave Hollander, and Tim Bray, Editors. World 
+  Wide Web Consortium, 14&nbsp;Jan&nbsp;1999. This version is 
+  http://www.w3.org/TR/1999/REC-xml-names-19990114. The <A 
+  href="http://www.w3.org/TR/REC-xml-names">latest version</A> is available at 
+  http://www.w3.org/TR/REC-xml-names.</DIV>
+  <DT class=label><SPAN><A id=xml-names11 name=xml-names11></A>XML Names 
+  1.1</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xml-names11/"><CITE>Namespaces in XML 1.1 
+  (Second Edition)</CITE></A>, Tim Bray, Dave Hollander, Andrew Layman, and 
+  Richard Tobin, Editors. World Wide Web Consortium, 16&nbsp;Aug&nbsp;2006. This 
+  version is http://www.w3.org/TR/2006/REC-xml-names11-20060816. The <A 
+  href="http://www.w3.org/TR/xml-names11/">latest version</A> is available at 
+  http://www.w3.org/TR/xml-names11/.</DIV>
+  <DT class=label><SPAN><A id=xmlschema-1 name=xmlschema-1></A>XML Schema</SPAN> 
+
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xmlschema-1/"><CITE>XML Schema Part 1: 
+  Structures Second Edition</CITE></A>, Henry S. Thompson, David Beech, Noah 
+  Mendelsohn, and Murray Maloney, Editors. World Wide Web Consortium, 
+  28&nbsp;Oct&nbsp;2004. This version is 
+  http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/. The <A 
+  href="http://www.w3.org/TR/xmlschema-1/">latest version</A> is available at 
+  http://www.w3.org/TR/xmlschema-1/.</DIV>
+  <DT class=label><SPAN><A id=xpath20 name=xpath20></A>XML Path Language (XPath) 
+  2.0</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xpath20/"><CITE>XML Path Language (XPath) 
+  2.0</CITE></A>, Don Chamberlin , Anders Berglund, Scott Boag, <EM>et. 
+  al.</EM>, Editors. World Wide Web Consortium, 23 Jan 2007. This version is 
+  REC-xpath20-20070123.htm. The <A 
+  href="http://www.w3.org/TR/xpath20/">latest version</A> is available at 
+  http://www.w3.org/TR/xpath20/.</DIV>
+  <DT class=label><SPAN><A id=xquery name=xquery></A>XQuery 1.0: An XML Query 
+  Language</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xquery/"><CITE>XQuery 1.0: An XML Query 
+  Language</CITE></A>, Don Chamberlin , Anders Berglund, Scott Boag, <EM>et. 
+  al.</EM>, Editors. World Wide Web Consortium, 23 Jan 2007. This version is 
+  REC-xquery-20070123.htm. The <A 
+  href="http://www.w3.org/TR/xquery/">latest version</A> is available at 
+  http://www.w3.org/TR/xquery/.</DIV>
+  <DT class=label><SPAN><A id=xslt20 name=xslt20></A>XSL Transformations (XSLT) 
+  Version 2.0</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xslt20"><CITE>XSL Transformations (XSLT) 
+  Version 2.0</CITE></A>, Michael Kay, Editor. World Wide Web Consortium, 23 Jan 
+  2007. This version is REC-xslt20-20070123.htm. The <A 
+  href="http://www.w3.org/TR/xslt20/">latest version</A> is available at 
+  http://www.w3.org/TR/xslt20/.</DIV></DD></DL></DIV>
+<DIV class=div2>
+<H3><A id=informative-references name=informative-references></A>A.2 Informative 
+References</H3>
+<DL>
+  <DT class=label><SPAN><A id=xhtml-modularization 
+  name=xhtml-modularization></A>XHTML Modularization</SPAN> 
+  <DD>
+  <DIV><A href="http://www.w3.org/TR/xhtml-modularization/"><CITE>XHTML™ 
+  Modularization 1.1</CITE></A>, Frank Boumphrey, Ted Wugofski, Murray Altheim, 
+  <EM>et. al.</EM>, Editors. World Wide Web Consortium, 05&nbsp;Jul&nbsp;2006. 
+  This version is http://www.w3.org/TR/2006/WD-xhtml-modularization-20060705. 
+  The <A href="http://www.w3.org/TR/xhtml-modularization/">latest version</A> is 
+  available at http://www.w3.org/TR/xhtml-modularization/. <A 
+  href="http://www.w3.org/TR/xhtml-modularization/"><CITE>Modularization of 
+  XHTML™ 1.0 - Second Edition</CITE></A>, , , , <EM>et. al.</EM>, Editors. World 
+  Wide Web Consortium, 18&nbsp;Feb&nbsp;2004. This version is 
+  http://www.w3.org/TR/2004/WD-xhtml-modularization-20040218. The <A 
+  href="http://www.w3.org/TR/xhtml-modularization/">latest version</A> is 
+  available at 
+http://www.w3.org/TR/xhtml-modularization/.</DIV></DD></DL></DIV></DIV>
+<DIV class=div1>
+<H2><A id=id-errors name=id-errors></A>B Summary of Error Conditions</H2>
+<P>This document uses the <CODE>err</CODE> prefix which represents the same 
+namespace URI (http://www.w3.org/2005/xqt-errors) as defined in <A 
+href="REC-xslt-xquery-serialization-20070123.htm#xpath20">[XML 
+Path Language (XPath) 2.0]</A>. Use of this namespace prefix binding in this 
+document is not normative.</P>
+<DL>
+  <DT><A id=ERRSENR0001 name=ERRSENR0001></A>err:SENR0001 
+  <DD>
+  <P>It is an error if an item in <EM>S<SUB>6</SUB></EM> in <A 
+  title="sequence normalization" 
+  href="REC-xslt-xquery-serialization-20070123.htm#sequence-normalization">sequence 
+  normalization</A> is an attribute node or a namespace node.</P>
+  <DT><A id=ERRSERE0003 name=ERRSERE0003></A>err:SERE0003 
+  <DD>
+  <P>It is an error if the <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  is unable to satisfy the rules for either a well-formed XML document entity or 
+  a well-formed XML external general parsed entity, or both, except for content 
+  modified by the character expansion phase of serialization.</P>
+  <DT><A id=ERRSEPM0004 name=ERRSEPM0004></A>err:SEPM0004 
+  <DD>
+  <P>It is an error to specify the doctype-system parameter, or to specify the 
+  standalone parameter with a value other than <CODE>omit</CODE>, if the 
+  instance of the data model contains text nodes or multiple element nodes as 
+  children of the root node.</P>
+  <DT><A id=ERRSERE0005 name=ERRSERE0005></A>err:SERE0005 
+  <DD>
+  <P>It is an error if the serialized result would contain an <A 
+  href="http://www.w3.org/TR/REC-xml-names/#NT-NCName">NCName</A> 
+  <SUP><SMALL>Names</SMALL></SUP> that contains a character that is not 
+  permitted by the version of Namespaces in XML specified by the 
+  <CODE>version</CODE> parameter.</P>
+  <DT><A id=ERRSERE0006 name=ERRSERE0006></A>err:SERE0006 
+  <DD>
+  <P>It is an error if the serialized result would contain a character that is 
+  not permitted by the version of XML specified by the <CODE>version</CODE> 
+  parameter.</P>
+  <DT><A id=ERRSESU0007 name=ERRSESU0007></A>err:SESU0007 
+  <DD>
+  <P>It is an error if an output encoding other than <CODE>UTF-8</CODE> or 
+  <CODE>UTF-16</CODE> is requested and the <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  does not support that encoding.</P>
+  <DT><A id=ERRSERE0008 name=ERRSERE0008></A>err:SERE0008 
+  <DD>
+  <P>It is an error if a character that cannot be represented in the encoding 
+  that the <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  is using for output appears in a context where character references are not 
+  allowed (for example if the character occurs in the name of an element).</P>
+  <DT><A id=ERRSEPM0009 name=ERRSEPM0009></A>err:SEPM0009 
+  <DD>
+  <P>It is an error if the <CODE>omit-xml-declaration</CODE> parameter has the 
+  value <CODE>yes</CODE>, and the <CODE>standalone</CODE> attribute has a value 
+  other than <CODE>omit</CODE>; or the <CODE>version</CODE> parameter has a 
+  value other than <CODE>1.0</CODE> and the <CODE>doctype-system</CODE> 
+  parameter is specified.</P>
+  <DT><A id=ERRSEPM0010 name=ERRSEPM0010></A>err:SEPM0010 
+  <DD>
+  <P>It is an error if the output method is <CODE>xml</CODE>, the value of the 
+  <CODE>undeclare-prefixes</CODE> parameter is <CODE>yes</CODE>, and the value 
+  of the <CODE>version</CODE> parameter is 1.0.</P>
+  <DT><A id=ERRSESU0011 name=ERRSESU0011></A>err:SESU0011 
+  <DD>
+  <P>It is an error if the value of the <CODE>normalization-form</CODE> 
+  parameter specifies a normalization form that is not supported by the <A 
+  title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A>.</P>
+  <DT><A id=ERRSERE0012 name=ERRSERE0012></A>err:SERE0012 
+  <DD>
+  <P>It is an error if the value of the <CODE>normalization-form</CODE> 
+  parameter is <CODE>fully-normalized</CODE> and any relevant construct of the 
+  result begins with a combining character.</P>
+  <DT><A id=ERRSESU0013 name=ERRSESU0013></A>err:SESU0013 
+  <DD>
+  <P>It is an error if the <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  does not support the version of XML or HTML specified by the 
+  <CODE>version</CODE> parameter.</P>
+  <DT><A id=ERRSERE0014 name=ERRSERE0014></A>err:SERE0014 
+  <DD>
+  <P>It is an error to use the HTML output method when characters which are 
+  legal in XML but not in HTML, specifically the control characters #x7F-#x9F, 
+  appear in the instance of the data model.</P>
+  <DT><A id=ERRSERE0015 name=ERRSERE0015></A>err:SERE0015 
+  <DD>
+  <P>It is an error to use the HTML output method when <CODE>&gt;</CODE> appears 
+  within a processing instruction in the data model instance being 
+  serialized.</P>
+  <DT><A id=ERRSEPM0016 name=ERRSEPM0016></A>err:SEPM0016 
+  <DD>
+  <P>It is a an error if a parameter value is invalid for the defined 
+  domain.</P></DD></DL></DIV>
+<DIV class=div1>
+<H2><A id=list-of-uri-attributes name=list-of-uri-attributes></A>C List of URI 
+Attributes</H2>
+<P>The following list of attributes are declared as type <CODE>%URI</CODE> or 
+<CODE>%UriList</CODE> for a given HTML or XHTML element, with the exception of 
+the <CODE>name</CODE> attribute for element <CODE>A</CODE> which is not a URI 
+type. The <CODE>name</CODE> attribute for element <CODE>A</CODE> should be 
+escaped as is recommended by the HTML Recommendation <A 
+href="REC-xslt-xquery-serialization-20070123.htm#html401">[HTML]</A> 
+in Appendix B.2.1.</P>
+<TABLE width=500 summary="Attributes of type URI" border=1>
+  <COLGROUP>
+  <COL width=200>
+  <COL width=300>
+  <THEAD>
+  <TR>
+    <TH align=left>Attributes</TH>
+    <TH align=left>Elements</TH></TR></THEAD>
+  <TBODY>
+  <TR>
+    <TD>action</TD>
+    <TD>FORM</TD></TR>
+  <TR>
+    <TD>archive</TD>
+    <TD>OBJECT</TD></TR>
+  <TR>
+    <TD>background</TD>
+    <TD>BODY</TD></TR>
+  <TR>
+    <TD>cite</TD>
+    <TD>BLOCKQUOTE, DEL, INS, Q</TD></TR>
+  <TR>
+    <TD>classid</TD>
+    <TD>OBJECT</TD></TR>
+  <TR>
+    <TD>codebase</TD>
+    <TD>APPLET, OBJECT</TD></TR>
+  <TR>
+    <TD>data</TD>
+    <TD>OBJECT</TD></TR>
+  <TR>
+    <TD>datasrc</TD>
+    <TD>BUTTON, DIV, INPUT, OBJECT, SELECT, SPAN, TABLE, TEXTAREA</TD></TR>
+  <TR>
+    <TD>for</TD>
+    <TD>SCRIPT</TD></TR>
+  <TR>
+    <TD>href</TD>
+    <TD>A, AREA, BASE, LINK</TD></TR>
+  <TR>
+    <TD>longdesc</TD>
+    <TD>FRAME, IFRAME, IMG</TD></TR>
+  <TR>
+    <TD>name</TD>
+    <TD>A</TD></TR>
+  <TR>
+    <TD>profile</TD>
+    <TD>HEAD</TD></TR>
+  <TR>
+    <TD>src</TD>
+    <TD>FRAME, IFRAME, IMG, INPUT, SCRIPT</TD></TR>
+  <TR>
+    <TD>usemap</TD>
+    <TD>IMG, INPUT, OBJECT</TD></TR></TBODY></TABLE></DIV>
+<DIV class=div1>
+<H2><A id=implementation-defined-features 
+name=implementation-defined-features></A>D Checklist of Implementation-Defined 
+Features (Non-Normative)</H2>
+<P>This appendix provides a summary of Serialization features whose effect is 
+explicitly <A title=implementation-defined 
+href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A>. 
+The conformance rules (see <A 
+href="REC-xslt-xquery-serialization-20070123.htm#conformance"><B>10 
+Conformance</B></A>) require vendors to provide documentation that explains how 
+these choices have been exercised.</P>
+<OL>
+  <LI>For any <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  output method, it is <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  whether <A title="sequence normalization" 
+  href="REC-xslt-xquery-serialization-20070123.htm#sequence-normalization">sequence 
+  normalization</A> process takes place. (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#serdm"><B>2 
+  Sequence Normalization</B></A>) 
+  <LI>If the namespace URI is non-null for the <CODE>method</CODE> serialization 
+  parameter, then the parameter specifies an <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  output method. (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+  Serialization Parameters</B></A>) 
+  <LI>The effect of additional serialization parameters on the output of the 
+  serializer, where the name of such a parameter must be namespace-qualified, is 
+  <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  or <A title=implementation-dependent 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdep">implementation-dependent</A>. 
+  The extent of this effect on the output must not override the provisions of 
+  this specification. (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#serparam"><B>3 
+  Serialization Parameters</B></A>) 
+  <LI>The effect of providing an option that allows the encoding phase to be 
+  skipped, so that the result of serialization is a stream of Unicode 
+  characters, is <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A>. 
+  The <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  is not required to support such an option. (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#serphases"><B>4 
+  Phases of Serialization</B></A>) 
+  <LI>An <A title=serializer 
+  href="REC-xslt-xquery-serialization-20070123.htm#serializer">serializer</A> 
+  may provide an <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A> 
+  mechanism to place CDATA sections in the <A title="result tree" 
+  href="REC-xslt-xquery-serialization-20070123.htm#result-tree">result 
+  tree</A>. (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#XML_CDATA-SECTION-ELEMENTS"><B>5.1.4 
+  XML Output Method: the cdata-section-elements Parameter</B></A>) 
+  <LI>If the value of the <CODE>normalization-form</CODE> form parameter is not 
+  <CODE>NFC</CODE>, <CODE>NFD</CODE>, <CODE>NFKC</CODE>, <CODE>NFKD</CODE>, 
+  <CODE>fully-normalized</CODE>, or <CODE>none</CODE> then the meaning of the 
+  value and its effect is <A title=implementation-defined 
+  href="REC-xslt-xquery-serialization-20070123.htm#impdef">implementation-defined</A>. 
+  (See <A 
+  href="REC-xslt-xquery-serialization-20070123.htm#XML_NORMALIZATION-FORM"><B>5.1.8 
+  XML Output Method: the normalization-form Parameter</B></A>) </LI></OL></DIV>
+<DIV class=div1>
+<H2><A id=revision-log name=revision-log></A>E Revision Log (Non-Normative)</H2>
+<P class=xpath>No substantive changes have been made to this document since the 
+Proposed Recommendation Draft of 21 November 2006.</P></DIV></DIV></BODY></HTML>

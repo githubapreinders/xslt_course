@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh hockey.xml hockey.xsl hockey.htm

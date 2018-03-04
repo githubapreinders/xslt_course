@@ -1,0 +1,1 @@
+sh ../prog/xslt1.sh bookcall.xml bookcall.xsl bookcall.htm

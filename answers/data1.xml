@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="showtree-html.xsl"?>
+<?pi1        value    of   pi1 ?>
+<!--comment number 1-->
+<greeting 
+  pub-id="+//ISBN 1-894049::CSL::Samples::SHOWTREE//Document 
+SHOWTREE Test//EN"
+  attr2="Value of second attribute">
+<purpose>To convey a greeting</purpose>
+<test1>A test<test2>of depth<test3>to three 
+
+levels</test3></test2></test1>
+<!--comment
+ 
+number 2-->
+<prelude id="start" 
+         xmlns:info="http://www.CraneSoftwrights.com/resources/">
+<?pi2 value of pi2?>
+<info:detail>Information about Greeting</info:detail>
+</prelude>
+<value>Hello world!</value>
+
+</greeting>

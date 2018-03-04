@@ -1,0 +1,1 @@
+sh ../prog/xslt1.sh proc.xml proc.xsl proc.htm

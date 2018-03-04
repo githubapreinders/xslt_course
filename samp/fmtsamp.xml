@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<doc>
+<para>First paragraph.</para>
+<para>Second para <emph>with emphasis</emph> embedded.</para>
+<para>Last paragraph.</para>
+</doc>

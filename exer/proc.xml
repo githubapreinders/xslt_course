@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="proc.xsl"?>
+<procs>
+ <task ref="33-52-01" type="Adjustment/Test">
+  <title>Emergency Floor Lighting</title>
+  <proc>
+   <title>Operational Test</title>
+   <step>Turn switch on.</step>
+   <step>Turn switch off.</step>
+  </proc>
+ </task>
+ <task ref="33-53-01" type="Adjustment/Test">
+  <title>Emergency Flashlight</title>
+  <proc>
+   <title>Adjustment</title>
+   <step>Remove cover from flashlight holder.</step>
+   <step>Remove flashlight from holder.</step>
+   <step>Replace flashlight in holder.</step>
+   <step>Replace cover on holder.</step>
+  </proc>
+  <proc>
+   <title>Operational Test</title>
+   <step>Remove cover from flashlight holder.</step>
+   <step>Remove flashlight from holder.</step>
+   <step>Turn flashlight on.</step>
+   <step>Turn flashlight off.</step>
+   <step>Replace flashlight in holder.</step>
+   <step>Replace cover on holder.</step>
+  </proc>
+ </task>
+</procs>

@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh datetest.xml datetest.xsl datetest.htm

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<test>This is a test with a backslash \ and eacute é in it - 
+plus the latin-1 for eacute <charValue val="233"/> as well
+</test>

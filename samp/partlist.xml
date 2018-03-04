@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!--start-->
+<part-list bin="78"><part nbr="A123">bolt</part>
+<part nbr="B456">washer</part><warn level="1" type="max"/>
+<!--end of parts--><?cursor   blink  under ?>
+</part-list>

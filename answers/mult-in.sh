@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh mult-in.xml mult-in.xsl mult-in.htm
