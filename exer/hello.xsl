@@ -7,7 +7,7 @@
 <xsl:output method="xml" omit-xml-declaration="yes"/>
 
 <xsl:template match="/">
-    <b><i><u><xsl:value-of select="greeting"/></u></i></b>
+    <b>A warm greeting to<i><u><xsl:value-of select="greeting"/></u></i></b>
 </xsl:template>
 
 </xsl:transform>

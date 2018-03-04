@@ -1,0 +1,1 @@
+sh ../prog/xslt2.sh prod1.xml prod-ap.xsl prod-ap.htm
